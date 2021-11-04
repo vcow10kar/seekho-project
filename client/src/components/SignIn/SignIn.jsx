@@ -52,7 +52,7 @@ export default function SignIn() {
     }
 
     return (
-        <Box component = "form" onSubmit = {handleClick} className = {styles.signin}>
+        <Box component = "form" onSubmit = {handleClick} className = {styles.signin} autoComplete="off">
             <img src = "/logos/Group_22.png" alt = "seekho" style = {{margin: 'auto', marginBottom: '0px'}}/>
 
             <h3 style = {{marginTop: '0px'}}>SIGN IN</h3>
@@ -64,6 +64,7 @@ export default function SignIn() {
                 //label = "Email Address"
                 name = "email"
                 type = "email"
+                id="outlined-disabled"
                 placeholder = "Email Address"
                 fullWidth autoFocus required
             />
@@ -79,8 +80,9 @@ export default function SignIn() {
                 name = "password"
                 placeholder = "Password"
                 helperText = "Password should have 8-20 alphanumeric characters & a special character"
-                sx={{mb: 5}}
+                sx={{mb: 5, borderColor: '#dcddde'}}
                 type="password"
+                id="outlined-disabled"
                 fullWidth autoFocus required
             /> 
 
@@ -90,14 +92,15 @@ export default function SignIn() {
             <SignInButton
               type="submit"
               fullWidth
+              disableElevation
               variant="contained"
-              sx={{ mt: 3, mb: 2, pt:2, pb:2}}
+              sx={{ mt: 5, mb: 2, pt:2, pb:2}}
             >
               SIGN IN
             </SignInButton  >
 
             <LinkWrapper>
-                <Link href="/signUp" underline="hover">{'Don’t have an account? Sign up'}</Link>
+                <Link href="/signUp" underline="hover" sx = {{color: 'black'}}>{'Don’t have an account? Sign up'}</Link>
             </LinkWrapper>
 
             <GoogleSignIn/>

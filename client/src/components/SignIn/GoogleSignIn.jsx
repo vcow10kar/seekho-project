@@ -87,6 +87,7 @@ export default function GoogleSignIn() {
         <GoogleButton
                 type="submit"
                 fullWidth
+                disableElevation
                 variant="contained"
                 sx={{ mt: 3, mb: 2, pt:2, pb:2, color: 'black', fontSize: '14px'}}
                 onClick = {() => goToGoogle()}

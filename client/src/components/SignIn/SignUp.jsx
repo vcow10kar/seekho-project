@@ -93,8 +93,8 @@ export default function SignUp() {
               SIGN UP
             </SignUpButton  >
 
-            <LinkWrapper sx = {{fontSize: '12px', color: 'grey'}}>
-                <Link href="/signIn" underline="hover">{'Already have an account?'}</Link>
+            <LinkWrapper>
+                <Link href="/signIn" underline="hover" sx = {{color: 'black'}}>{'Already have an account?'}</Link>
             </LinkWrapper>
 
             

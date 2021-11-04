@@ -17,19 +17,26 @@ const SignInButton = styled(Button)({
     }, 
 })
 
-const FormText = styled.input`
-    width: 280px;
-    height: 54px;
-    border-radius: 12px;
-    background-color: #dcddde;
-    padding-left: 20px;
-    border: 0px;
-    margin: 20px auto;
+const FormText = styled(TextField)({
+    width: '280px',
+    height: '54px',
+    backgroundColor: '#dcddde',
+    borderColor: '#dcddde',
+    margin: '20px auto',
     
-    &:hover, &:active {
-        border: 1px solid black;
+    '&:hover': {
+        
+    },
+
+    '&:active': {
+        
+    },
+
+    '&.MuiTextField-root' : {
+        border: '0px solid black',
+        borderRadius: '12px'
     }
-`
+})
 
 const LinkWrapper = styled(Box)`
     font-size: 12px;
@@ -63,24 +70,19 @@ const AlertWrapper = styled(Alert) ({
     }
 })
 
-const GoogleButton = styled.button({
+const GoogleButton = styled(Button)({
     backgroundColor: '#dcddde',
-    //borderRadius: '12px',
     width: '280px',
-    height: '55px',
+    height: '54px',
     fontWeight: 500,
     fontsize: '14px',
     lineHeight: '20px',
-    textColor: 'black',
-    borderRadius: '12px',
+    '&:hover': {
+        backgroundColor: '#c4c4c4'
+    },
 
     '&.MuiButton-root': {
         borderRadius: ' 12px'
-    }, 
-
-    '&:hover': {
-        backgroundColor: '#c4c4c4',
-        
     }
 })
 
