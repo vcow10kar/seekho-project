@@ -1,0 +1,20 @@
+.signin {
+    width: 280px;
+    margin: auto;
+    border-color: black;
+}
+
+.buttonCls {
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.buttonCls::selection {
+    background-color: grey;
+}
+
+.linkWrapper {
+    color: grey;
+    font-size: 12px;
+}
