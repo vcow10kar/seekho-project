@@ -3,7 +3,6 @@ import { TextField, Button, Box, Alert } from "@mui/material";
 
 const SignInButton = styled(Button)({
     backgroundColor: 'black',
-    //borderRadius: '12px',
     width: '280px',
     height: '54px',
     fontWeight: 500,
@@ -11,20 +10,26 @@ const SignInButton = styled(Button)({
     lineHeight: '20px',
     '&:hover': {
         backgroundColor: 'grey'
-    }
-})
-
-const FormText = styled(TextField)({
-    width: '280px',
-    height: '54px',
-    '&:hover': {
-        borderColor: 'black'
     },
 
-    '&.Mui-focused':{
-        borderColor: 'black'
-    }
+    '&.MuiButton-root': {
+        borderRadius: ' 12px'
+    }, 
 })
+
+const FormText = styled.input`
+    width: 280px;
+    height: 54px;
+    border-radius: 12px;
+    background-color: #dcddde;
+    padding-left: 20px;
+    border: 0px;
+    margin: 20px auto;
+    
+    &:hover, &:active {
+        border: 1px solid black;
+    }
+`
 
 const LinkWrapper = styled(Box)`
     font-size: 12px;
@@ -37,14 +42,28 @@ const LinkWrapper = styled(Box)`
 `
 
 const AlertWrapper = styled(Alert) ({
-    fontSize: '14px', 
-    width: '248px', 
-    height: '35px',
-    margin: '0px',
+    fontSize: '12px', 
+    width: '280px', 
+    borderRadius: '12px',
 
+    '& > div:nth-child(1)': {
+        width: '20%',
+        margin: 'auto'
+    },
+
+    '& > div:nth-child(2)': {
+        width: '80%',
+        textAlign: 'left'
+    },
+
+    '& > .MuiAlert-icon': {
+        margin: 'auto',
+        padding: '0px',
+        textAlign: 'left' 
+    }
 })
 
-const GoogleButton = styled(Button)({
+const GoogleButton = styled.button({
     backgroundColor: '#dcddde',
     //borderRadius: '12px',
     width: '280px',
@@ -53,6 +72,12 @@ const GoogleButton = styled(Button)({
     fontsize: '14px',
     lineHeight: '20px',
     textColor: 'black',
+    borderRadius: '12px',
+
+    '&.MuiButton-root': {
+        borderRadius: ' 12px'
+    }, 
+
     '&:hover': {
         backgroundColor: '#c4c4c4',
         

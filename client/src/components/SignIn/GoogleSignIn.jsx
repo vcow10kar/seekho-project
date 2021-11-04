@@ -14,7 +14,7 @@ export default function GoogleSignIn() {
         localStorage.setItem('token', "");
         localStorage.setItem('userBookList', "");
         localStorage.setItem('readingList', "");
-    }, [user]);
+    }, user);
 
     function goToGoogle() {
         let timer = null;
@@ -30,11 +30,15 @@ export default function GoogleSignIn() {
             axios
             .get("http://localhost:5000/getuser", {withCredentials: true})
             .then(res => {
-                console.log(res);
-                console.log("Received a response:", res.data);
+                let temp = {
+                    token: res.data.token,
+                    userBookList: res.data.userBookList,
+                    readingList: res.data.readingList
+                }
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
+                setUser(temp);
                 window.location.pathname = '/home';
             })
             .catch(err => {
@@ -86,7 +90,7 @@ export default function GoogleSignIn() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2, pt:2, pb:2, color: 'black', fontSize: '14px'}}
                 onClick = {() => goToGoogle()}
-            ><span style = {{marginRight: 35, marginTop: 'auto', width: '22px', height: '22px'}}><img style = {{width: '22px', height: '22px'}} src = "https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt = "access google"/></span>
+            ><span style = {{marginRight: 35, marginTop: 'auto', width: '22px', height: '22px'}}><img style = {{width: '22px', height: '22px'}} src = "/logos/google_icon.png" alt = "access google"/></span>
                CONTINUE WITH GOOGLE
             </GoogleButton  >
     )
