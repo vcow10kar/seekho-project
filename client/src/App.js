@@ -13,11 +13,11 @@ function App() {
       <div className="App">
             
             <Switch>
+              <Route path =  '/myBook' component = {MyBooks}/>
               <Route path = "/signUp" component = {SignUp}/>
               <Route path = "/signIn" component = {SignIn}/>
               <Route path = "/home" component = {Home}/>
               <Route path =  '/' component = {Splash}/>
-              <Route path =  '/myBooks' component = {MyBooks}/>
             </Switch>
             
         </div>

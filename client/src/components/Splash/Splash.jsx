@@ -45,7 +45,7 @@ export default function Splash() {
       <h1>Splash Screen Carousel</h1>
       <Carousel
         ref={carouselRef}
-        itemsToShow={1}
+        itemsToShow={2}
         showArrows={false}
         pagination={false}
         onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
