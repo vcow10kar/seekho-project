@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import Carousel from "react-elastic-carousel";
 import ReadingListLinks from './ReadingListLinks';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Link} from "react-router-dom";
 
 function MyBooks() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -61,10 +62,6 @@ function MyBooks() {
         }
     ]
     return (
-        <Router>
-            {items.map(item => {
-                return <Route path =  {`/books/${item.id}`} component = {MyBooks}/>
-            })}
             
             <div className = {styles.myBooksPage}>
                 <h2 className = {styles.continue}>Continue where you left...</h2>
@@ -77,7 +74,9 @@ function MyBooks() {
                 >
                     {items.map(item => {
                                 return (
-                                    <MyBooksIndividual data = {item}/>          
+                                    
+                                    <MyBooksIndividual data = {item} key = {item.id}/>  
+                                         
                                 )
                             })}
                 </Carousel>
@@ -96,7 +95,6 @@ function MyBooks() {
                 </div>
 
             </div>
-        </Router>
     )
 }
 

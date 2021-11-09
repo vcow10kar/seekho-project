@@ -6,6 +6,7 @@ export default function Books() {
     return (
         <div>
             <h1>Book {id.id}</h1>
+
         </div>
     )
 }

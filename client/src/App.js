@@ -11,23 +11,22 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 function App() {
   
   return (
-    <Router>
+    
       <div className="App">
-            
+            <Router>
             <Switch>
+              <Route exact path =  '/' component = {Splash}/>
               <Route path =  '/myBooks' component = {MyBooks}/>
               <Route path = "/signUp" component = {SignUp}/>
               <Route path = "/signIn" component = {SignIn}/>
               <Route path = "/home" component = {Home}/>
-              <Route path = "/books/:id">
-                <Books/>
-              </Route>
+              <Route path = "/books/:id" component = {Books} />
               <Route path = "/explore" component = {Explore}/>
-              <Route path =  '/' component = {Splash}/>
+              
             </Switch>
-            
+            </Router>
         </div>
-    </Router>
+    
    
   );
 }

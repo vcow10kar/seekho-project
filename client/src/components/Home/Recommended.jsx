@@ -1,5 +1,5 @@
 import "./Recommended.css"
-export const Recommended=({color,link,author,tag})=>{
+const Recommended=({color,link,author,tag})=>{
     return(
         <div>
             <div>
@@ -16,6 +16,8 @@ export const Recommended=({color,link,author,tag})=>{
         </div>
     )
 }
+
+export default Recommended;
 
 // import "./Trending.css"
 // export const Trending=({color,link,tag,author})=>{
