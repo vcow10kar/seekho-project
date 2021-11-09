@@ -3,10 +3,36 @@ import MyBooksIndividual from "./MyBooksIndividual";
 import { useState, useRef } from "react";
 import {Stack} from '@mui/material';
 import Carousel from "react-elastic-carousel";
+import ReadingListLinks from './ReadingListLinks';
+
+
 
 function MyBooks() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const carouselRef = useRef();
+
+    const links = [
+        {
+            source: "/assets/twemoji_black-heart.png",
+            text: "Readlist"
+        },
+        {
+            source: "/assets/carbon_in-progress.png",
+            text: "Reading Now"
+        },
+        {
+            source: "/assets/ant-design_cloud-download-outlined.png",
+            text: "Downloaded books"
+        },
+        {
+            source: "/assets/fluent_history-24-filled.png",
+            text: "Recently opened"
+        },
+        {
+            source: "/assets/teenyicons_tick-circle-solid.png",
+            text: "Finished Reading"
+        }
+    ]
 
     const items = [
         {
@@ -50,11 +76,17 @@ function MyBooks() {
             </Carousel>
 
             <div className = {styles.booksNavigationLinks}>
-                <p>All Books</p>
+                <a href = "/myBooks" className = {styles.allBooks}>
+                    <p>All books</p>
+                    <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
+                </a>
             </div>
-                
-            
 
+            <div>
+                {links.map(item => {
+                    return <ReadingListLinks link = {item}/>
+                })}
+            </div>
 
         </div>
     )

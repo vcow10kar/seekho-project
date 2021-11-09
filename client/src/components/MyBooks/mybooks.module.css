@@ -1,15 +1,15 @@
 .myBooksPage {
     margin: 14px;
     width: 411px;
+    text-align: left;
 }
 
 .continue {
     text-align: left;
-    opacity: 0.8;
     font-weight: 900;
     font-size: 18px;
     line-height: 21.09px;
-    opacity: 0.8;
+    opacity: 0.7;
     margin-left: 11px;
 }
 
@@ -36,7 +36,7 @@
     font-size: 12px;
     font-weight: 900;
     line-height: 14.06px;
-    opacity: 0.8;
+    opacity: 0.7;
     text-align: left;
     margin-top: 0px;
     padding: 0px;
@@ -50,9 +50,47 @@
     text-align: left;
     margin-top: 0px;
     padding: 0px;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .booksNavigationLinks {
-    margin-left: 21px;
+    margin-left: 11px;
+}
+
+.arrow {
+    width: 6px;
+    height: 12px;
+}
+
+.allBooks {
+    text-decoration: none;
+    color: black;
+    opacity: 0.7;
+    font-size: 18px;
+    line-height: 21.09px;
+    font-weight: 900;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 95% 5%;
+}
+
+.allBooks > :nth-child(2) {
+    margin: auto;
+}
+
+.readingLinks {
+    text-decoration: none;
+    color: black;
+    opacity: 0.8;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 700;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    gap: 10px;
+}
+
+.readingLinks > :nth-child(2n + 1){
+    margin: auto;
 }
