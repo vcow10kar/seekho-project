@@ -1,8 +1,11 @@
+import styles from './explore.module.css';
 import AcademicFields from "../Academics/AcademicFields"
+import ExportCarousel from "./ExportCarousel"
 export default function Explore() {
     return (
-        <div>
-            <p>This is the explore page!!!</p>
+        <div className = {styles.explorePage}>
+            <p>EXPLORE PAGE!</p>
+            <ExportCarousel/>
             <AcademicFields />
         </div>
     )

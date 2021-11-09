@@ -1,0 +1,45 @@
+.explorePage {
+    width: 411px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.exploreCarousel {
+    width: 411px;
+    height: 216px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.exploreCarousel .rec-carousel-item {
+    margin: 0px;
+    width: 100%;
+}
+
+.centered {
+    /* position: relative; */
+    top: 202px;
+    left: 411px;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.exploreCarouselButton {
+    width: 411px;
+    margin: auto;
+    position: absolute;
+    /* top: 234px;
+    left: 627px; */
+}
+
+.exploreCarouselImage {
+    width: 411px;
+    height: 216px;
+}
+
+.exploreCarousel .rec-slider-container {
+    margin: 0px;
+    width: 411px;
+}
+
+/* > .rec-carousel-wrapper > .rec-carousel >  */
