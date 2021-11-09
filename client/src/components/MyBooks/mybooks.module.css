@@ -1,0 +1,38 @@
+.myBooksPage {
+    margin: 24px;
+}
+
+.continue {
+    text-align: left;
+    opacity: 0.8;
+}
+
+.book {
+    font-family: 'Roboto';
+}
+
+.bookImg {
+    width: 98px;
+    height: 145px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.bookTilte {
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 14.06px;
+    opacity: 0.8;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.bookAuthor {
+    font-size: 9px;
+    line-height: 10.55px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 0px;
+    opacity: 0.6;
+}

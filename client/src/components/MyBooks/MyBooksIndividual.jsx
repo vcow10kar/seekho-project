@@ -1,9 +1,11 @@
-function MyBooksIndividual() {
+import styles from './mybooks.module.css';
+
+function MyBooksIndividual({data}) {
     return (
         <div>
-            <img src = "https://m.media-amazon.com/images/I/91gILL2JmjL._AC_UY218_.jpg" alt = "book cover"/>
-            <p>The Alchemist</p>
-            <p>by Paulo Coelho</p>
+            <img className = {styles.bookImg} src = {data.imageUrl} alt = {data.title}/>
+            <p className = {styles.bookTilte}>{data.title}</p>
+            <p className = {styles.bookAuthor}>by {data.author}</p>
 
         </div>
     )
