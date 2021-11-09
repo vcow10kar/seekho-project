@@ -1,6 +1,8 @@
+import styles from './academics.module.css';
+
 function AcademicFieldItem({text, link}) {
     return (
-        <div>
+        <div className = {styles.academicFieldItem}>
             <img src = {link} alt = {text}/>
             <p>{text}</p>
         </div>

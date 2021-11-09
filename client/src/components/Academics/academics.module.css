@@ -1,0 +1,32 @@
+.academics {
+    width: 100%;
+    margin:0px 22px 0px 22px;
+    font-family: "Roboto", sans-serif;
+}
+
+.academics > p {
+    font-size: 16px;
+    line-height: 18.75px;
+    font-weight: 400;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.academicFieldItem {
+    margin:0px;
+    padding: 0px;
+}
+
+.academicFieldItem > img {
+    width: 80px;
+    height: 94px;
+}
+
+.academicFieldItem > p {
+    font-size: 12px;
+    line-height: 14.06px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 0px;
+}

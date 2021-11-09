@@ -1,5 +1,7 @@
 import AcademicFieldItem from "./AcademicFieldItem";
 import {Stack} from '@mui/material';
+import styles from './academics.module.css';
+import Carousel from "react-elastic-carousel";
 
 function AcademicFields() {
     const fields = [
@@ -69,18 +71,22 @@ function AcademicFields() {
     ]
 
     return (
-        <div>
+        <div className = {styles.academicsPage}>
             {fields.map(item => {
                 return (
-                    <div>
+                    <div className = {styles.academics}>
                         <p>{item.name}</p>
-                        <Stack direction = "row">
+                        <Carousel 
+                            itemsToShow={4}
+                            showArrows={false}
+                            pagination={false}
+                        >
                         {item.field.map(data => {
                             return(
                                 <AcademicFieldItem text = {data.name} link = {data.link}/>
                             )
                         })}
-                        </Stack>
+                        </Carousel>
                     </div>
                 )  
             })}
