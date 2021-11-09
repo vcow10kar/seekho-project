@@ -1,11 +1,43 @@
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import styles from './books.module.css';
+import axios from 'axios';
 
 export default function Books() {
-    const id  = useParams();
-    console.log(id);
+    const [book, setBook] = useState({});
+    const {id}  = useParams();
+    const getBook = () => {
+        axios({
+            method: "get",
+            url: `http://localhost:5000/books/${id}`,
+        })
+        .then(res => {
+            console.log(res.data);
+            setBook(res.data.book);
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        })
+    }
+
+    useEffect(() => {
+        getBook();
+    }, []);
     return (
-        <div>
-            <h1>Book {id.id}</h1>
+        <div className = {styles.bookCoverPage}>
+            <img src = {book.coverImageUrl} alt = {book.title}/>
+
+            <div className = {styles.readDiv}>
+                <div className = {styles.readList}>
+                    <img src = "/logos/addReadList.png" alt = "Add to ReadList"/>
+                    <p>Add to Readlist</p>
+                </div>
+
+                <div className = {styles.readNow}>
+                    <img src = "/logos/readNow.png" alt = "Add to ReadList"/>
+                    <p>Read Now</p>
+                </div>
+            </div>
 
         </div>
     )

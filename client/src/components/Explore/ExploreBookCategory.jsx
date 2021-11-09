@@ -12,7 +12,6 @@ const ExploreBookCategory = ({category}) => {
             url: `http://localhost:5000/books/category/${category}`,
         })
         .then(res => {
-            console.log(res.data.books);
             setBooks([...res.data.books]);
         })
         .catch(err => {
