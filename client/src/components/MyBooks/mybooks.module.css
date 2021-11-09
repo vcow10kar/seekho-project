@@ -1,21 +1,35 @@
 .myBooksPage {
-    margin: 24px;
+    margin: 14px;
+    width: 411px;
 }
 
 .continue {
     text-align: left;
     opacity: 0.8;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21.09px;
+    opacity: 0.8;
+    margin-left: 11px;
 }
 
 .book {
-    font-family: 'Roboto';
+    margin: 12px;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 43px;
+    padding: 0px;
+}
+
+.book > div:nth-child(1) {
+    margin: 0px;
 }
 
 .bookImg {
     width: 98px;
     height: 145px;
     border-radius: 4px;
-    margin-bottom: 10px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
 }
 
 .bookTilte {
@@ -25,6 +39,7 @@
     opacity: 0.8;
     text-align: left;
     margin-top: 0px;
+    padding: 0px;
     margin-bottom: 0px;
 }
 
@@ -34,5 +49,10 @@
     font-weight: 400;
     text-align: left;
     margin-top: 0px;
+    padding: 0px;
     opacity: 0.6;
+}
+
+.booksNavigationLinks {
+    margin-left: 21px;
 }
