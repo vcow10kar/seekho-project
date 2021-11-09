@@ -43,7 +43,7 @@ export default function SignIn() {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
-                //window.location.pathname = '/home';
+                window.location.pathname = '/home';
             }
         })
         .catch(err => {
@@ -66,6 +66,10 @@ export default function SignIn() {
                 type = "email"
                 id="outlined-disabled"
                 placeholder = "Email Address"
+                variant="standard"
+                InputProps={{
+                        disableUnderline: true,
+                }}
                 fullWidth autoFocus required
             />
 
@@ -78,9 +82,13 @@ export default function SignIn() {
                 id = "password"
                 //label = "Password"
                 name = "password"
+                variant="standard"
+                InputProps={{
+                        disableUnderline: true,
+                }}
                 placeholder = "Password"
                 helperText = "Password should have 8-20 alphanumeric characters & a special character"
-                sx={{mb: 5, borderColor: '#dcddde'}}
+                sx={{mb: 5, borderColor: '#00000'}}
                 type="password"
                 id="outlined-disabled"
                 fullWidth autoFocus required

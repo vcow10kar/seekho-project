@@ -14,7 +14,7 @@ export default function GoogleSignIn() {
         localStorage.setItem('token', "");
         localStorage.setItem('userBookList', "");
         localStorage.setItem('readingList', "");
-    }, user);
+    }, []);
 
     function goToGoogle() {
         let timer = null;

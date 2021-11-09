@@ -23,14 +23,8 @@ const FormText = styled(TextField)({
     backgroundColor: '#dcddde',
     borderColor: '#dcddde',
     margin: '20px auto',
-    
-    '&:hover': {
-        
-    },
-
-    '&:active': {
-        
-    },
+    paddingLeft: '20px',
+    paddingTop: '13px',
 
     '&.MuiTextField-root' : {
         border: '0px solid black',

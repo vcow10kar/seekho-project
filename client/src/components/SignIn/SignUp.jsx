@@ -65,6 +65,10 @@ export default function SignUp() {
                 //label = "Email Address"
                 name = "email"
                 placeholder = "Email Address"
+                variant="standard"
+                InputProps={{
+                        disableUnderline: true,
+                }}
                 fullWidth autoFocus required
             />
 
@@ -75,6 +79,10 @@ export default function SignUp() {
                 id = "password"
                 //label = "Password"
                 name = "password"
+                variant="standard"
+                InputProps={{
+                        disableUnderline: true,
+                }}
                 placeholder = "Password"
                 helperText = "Password should have 8-20 alphanumeric characters & a special character"
                 sx={{mb: 5}}
