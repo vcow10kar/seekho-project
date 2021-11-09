@@ -3,6 +3,7 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignIn/SignUp';
 import Home from './components/Home/Home'
 import Splash from './components/Splash/Splash';
+import MyBooks from './components/MyBooks/MyBooks';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
               <Route path = "/signIn" component = {SignIn}/>
               <Route path = "/home" component = {Home}/>
               <Route path =  '/' component = {Splash}/>
+              <Route path =  '/myBooks' component = {MyBooks}/>
             </Switch>
             
         </div>
