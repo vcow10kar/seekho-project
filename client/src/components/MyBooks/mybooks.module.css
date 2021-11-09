@@ -20,6 +20,10 @@
     padding: 0px;
 }
 
+.book > a {
+    text-decoration: none;
+}
+
 .book > div:nth-child(1) {
     margin: 0px;
 }
