@@ -72,25 +72,47 @@
     width: 100%;
     display: grid;
     grid-template-columns: 95% 5%;
+    margin-bottom: 0px;
+    margin-top: 12px;
 }
 
 .allBooks > :nth-child(2) {
     margin: auto;
 }
 
+.allBooks > p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .readingLinks {
     text-decoration: none;
     color: black;
-    opacity: 0.8;
+    opacity: 0.9;
     font-size: 16px;
     line-height: 18.75px;
     font-weight: 700;
     width: 95%;
     display: grid;
     grid-template-columns: 5% 90% 5%;
-    gap: 10px;
+    gap: 5px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .readingLinks > :nth-child(2n + 1){
     margin: auto;
+    opacity: 1.2;
+}
+
+.readingLinks > p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 4px;
+    opacity: 0.8;
+}
+
+.linkOpacity {
+    opacity: 2;
 }
