@@ -37,7 +37,7 @@ export default function Splash() {
       carouselRef.current.goTo(activeItemIndex + 1);
       setActiveItemIndex(activeItemIndex + 1);
     } else if ((activeItemIndex + 1) === items.length) {
-        window.location.pathname = '/home';
+        window.location.pathname = '/explore';
     }
   };
   return (

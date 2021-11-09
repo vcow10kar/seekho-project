@@ -42,4 +42,28 @@
     width: 411px;
 }
 
-/* > .rec-carousel-wrapper > .rec-carousel >  */
+.bookCategory {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 23.44px;
+    font-weight: 900;
+    opacity: 0.8;
+    text-align: left;
+}
+
+.exploreItem {
+    width: 160.56px;
+    height: 170.29px;
+    /* opacity: 0.4; */
+    background-color: rgba(250, 189, 209, 0.4);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center ;
+}
+
+.exploreItem > img {
+    width: 108px;
+    height: 158px;
+    border-radius: 8px;
+    margin: auto;
+}

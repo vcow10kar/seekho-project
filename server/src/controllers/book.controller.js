@@ -54,4 +54,14 @@ router.delete("/:id", async (req, res) => {
 
 });
 
+//Get Book by Category
+
+router.get("/category/:id", async(req, res) => {
+    let books = await Book.find({
+        category: { $eq: req.params.id },
+      }).lean().exec();
+
+    res.status(200).send({books});
+})
+
 module.exports = router;
