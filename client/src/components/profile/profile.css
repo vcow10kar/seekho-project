@@ -1,0 +1,72 @@
+
+hr {
+  color: lightgray;
+}
+
+#you {
+  color: #000000;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+#innersection1 {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: flex-start;
+}
+
+#circlular-profile {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #c4c4c4;
+  border-radius: 25px;
+  background-color: #c4c4c4;
+  margin: 20px 20px 10px 10px;
+}
+
+#username {
+  align-items: center;
+  font-weight: 600;
+  /* border: 1px solid black; */
+  margin-bottom: 0;
+}
+
+#user_id {
+  text-align: left;
+  /* border: 1px solid black; */
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+#arrow-icon {
+  /* border:1px solid yellowgreen; */
+  margin: 30px 0 30px 195px;
+}
+
+.arrow_icon {
+  margin: auto;
+  margin-right: 10px;
+  /* border: 2px solid orange; */
+  display: flex;
+  justify-content: flex-end;
+}
+
+#text_div {
+  margin: 0 0 0 0;
+  height: 20px;
+  line-height: 0;
+  display: flex;
+  /* border:1px solid blue; */
+}
+
+h4 {
+  margin: 8px 0 0 0;
+}
+
+#section2,
+#mybooks,
+#other {
+  margin: 45px 0 1px 0;
+}
