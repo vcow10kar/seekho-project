@@ -2,20 +2,20 @@ import styled from 'styled-components';
 import { TextField, Button, Box, Alert } from "@mui/material";
 
 const SignInButton = styled(Button)({
-    backgroundColor: 'black',
-    width: '280px',
-    height: '54px',
-    fontWeight: 500,
-    fontsize: '14px',
-    lineHeight: '20px',
-    '&:hover': {
-        backgroundColor: 'grey'
-    },
+  backgroundColor: "#333333",
+  width: "280px",
+  height: "54px",
+  fontWeight: 500,
+  fontsize: "14px",
+  lineHeight: "20px",
+  "&:hover": {
+    backgroundColor: "grey",
+  },
 
-    '&.MuiButton-root': {
-        borderRadius: ' 12px'
-    }, 
-})
+  "&.MuiButton-root": {
+    borderRadius: " 12px",
+  },
+});
 
 const FormText = styled(TextField)({
     width: '280px',
