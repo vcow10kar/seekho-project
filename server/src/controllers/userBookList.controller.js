@@ -14,30 +14,44 @@ router.post("/", async (req, res) => {
 // Getting all userBook_lists
 
 router.get("/", async (req, res) => {
-  let userBookLists = await UserBookList.find().lean().exec();
+  let userBookLists = await UserBookList.findById(req.params.id)
+  
   res.status(200).send({ userBookLists });
 });
 
 // Getting a userBook_list by id
 
 router.get("/:id", async (req, res) => {
-  let userBookList = await UserBookList.findById(req.params.id).lean().exec();
+  let userBookList = await UserBookList.findById(req.params.id).populate('user')
+  .populate({path: 'book'})
+  .populate({path: 'academic'})
+  .lean().exec();
+
+  console.log(userBookList);
   res.status(200).send({ userBookList });
 });
 
-// Updating a userBook_list by id
 
-// router.patch("/:id", async (req, res) => {
-//   let userBookList = await UserBookList.findByIdAndUpdate(
-//     req.params.id,
-//     req.body,
-//     {
-//       new: true,
-//     }
-//   );
+//Updating Book List by Id
 
-//   res.status(200).send({ userBookList });
-// });
+router.patch("/:id/books", async (req, res) => {
+
+  let bookList;
+  bookList = await UserBookList.findById(req.params.id);
+  bookList = await UserBookList.count({_id: req.params.id, book: {$in: [req.body.book]}});
+
+  if(bookList === 0) {
+    bookList = await UserBookList.findByIdAndUpdate(
+      req.params.id,
+      {$push: {book: req.body.book}}
+    ).exec();
+
+    res.status(200).send({ bookList });
+  } else {
+    console.log("Book present");
+    res.status(400).send({message: "Book already in User Book List"});
+  }
+});
 
 // Deleting a userBook_list by id
 

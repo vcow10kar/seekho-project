@@ -1,0 +1,44 @@
+.bookCoverPage {
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 411px;
+    height: 823px;
+    margin: auto;
+}
+
+.bookCoverPage > img{
+    width: 266px;
+    height: 399px;
+    top: 149px;
+    position: relative;
+    left: 0px;
+    border-radius: 10px;
+    margin:auto;
+    z-index: 1;
+    border: 0px;
+}
+
+.readDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    font-size: 12px;
+    line-height: 14.06px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+.readList {
+    width: 85px;
+    height: 52px;
+    top: 180px;
+    position: relative;
+    left: 90px;
+}
+
+.readNow {
+    width: 85px;
+    height: 52px;
+    top: 180px;
+    position: relative;
+    left: 36px;
+}

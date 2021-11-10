@@ -14,7 +14,7 @@ const Button = styled.button`
   background-color: ${({ active }) => (active ? "#ffdb47" : "#c4c4c4")};
 `;
 
-function ExportCarousel() {
+function ExploreCarousel() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const carouselRef = useRef();
 
@@ -22,18 +22,21 @@ function ExportCarousel() {
         {
             imageUrl: "/assets/exploreCarousel1.png",
             title: "",
-            color: ""
+            color: "",
+            id: 1
         },
 
         {
             imageUrl: "/assets/exploreCarousel2.png",
             title: "Classified reads to get started",
-            color: "#FFFFFF"
+            color: "#FFFFFF",
+            id: 2
         }, 
         {
             imageUrl: "/assets/exploreCarousel3.png",
             title: "Best Audiobooks for your leisure",
-            color: "#FFDB47"
+            color: "#FFDB47",
+            id: 3
         }
     ]
 
@@ -48,7 +51,7 @@ function ExportCarousel() {
             >
                 {items.map(item => {
                             return (
-                                <ExploreCarouselItem imageUrl = {item.imageUrl} color = {item.color} title = {item.title}/>
+                                <ExploreCarouselItem key = {item.id} imageUrl = {item.imageUrl} color = {item.color} title = {item.title}/>
                             )
                         })}
             </Carousel>
@@ -69,4 +72,4 @@ function ExportCarousel() {
     )
 }
 
-export default ExportCarousel;
+export default ExploreCarousel;

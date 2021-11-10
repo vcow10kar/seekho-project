@@ -42,4 +42,63 @@
     width: 411px;
 }
 
-/* > .rec-carousel-wrapper > .rec-carousel >  */
+.bookCategory {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 23.44px;
+    font-weight: 900;
+    opacity: 0.8;
+    text-align: left;
+}
+
+.exploreBook {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.exploreBook a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bookTitle {
+    font-size: 12px;
+    line-height: 14.06px;
+    font-weight: 900;
+    opacity: 0.8;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.bookAuthor {
+    font-size: 10px;
+    line-height: 11.72px;
+    text-align: center;
+    margin-top: 2px;
+    font-weight: 500;
+    opacity: 0.4;
+}
+
+.bookInfo {
+    display: flex;
+    justify-content: center;
+}
+
+.exploreItem {
+    width: 160.56px;
+    height: 170.29px;
+    /* opacity: 0.4; */
+    background-color: rgba(250, 189, 209, 0.4);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center ;
+}
+
+.exploreItem > img {
+    width: 108px;
+    height: 158px;
+    border-radius: 8px;
+    margin: auto;
+}
