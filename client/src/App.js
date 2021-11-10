@@ -6,11 +6,12 @@ import Splash from './components/Splash/Splash';
 import MyBooks from './components/MyBooks/MyBooks';
 import Explore from './components/Explore/Explore';
 import Books from './components/Books/Books';
-import SinglePage from './components/DisplayPDF/DisplayPDF';
+import SinglePage from './components/DisplayPDF/SinglePage';
+import Profile from './components/profile/profile';
+import EmbedPDF from './components/DisplayPDF/EmbedPDF';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
-  
   return (
     
       <div className="App">
@@ -22,6 +23,8 @@ function App() {
               <Route path = "/signIn" component = {SignIn}/>
               <Route path = "/home" component = {Home}/>
               <Route path = "/books/:id" component = {Books} />
+              <Route path = "/displayBook" component = {EmbedPDF}/>
+              <Route path = "/profile" component = {Profile}/>
               <Route path = "/display" component = {SinglePage}/>
               <Route path = "/explore" component = {Explore}/>
               
