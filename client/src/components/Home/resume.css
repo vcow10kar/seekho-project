@@ -1,0 +1,57 @@
+.resume-parent{
+    display: flex;
+    gap: 20px;
+}
+
+
+.resume{
+width: 209px;
+height: 92px;
+left: 40px;
+top: 393px;
+display: flex;
+background: #FABBD0;
+border-radius: 10px;
+}
+
+
+.resume-coverImage{
+width: 48px;
+height: 72px;
+margin-left: 10px;
+margin-top: 10px;
+border-radius: 4px;
+}
+
+
+.resume-tag{
+font-family: Roboto;
+font-size: 12px;
+font-style: normal;
+font-weight: 900;
+letter-spacing: 0em;
+margin-left: 20px;
+margin-top: 15px;
+}
+
+
+.resume-author{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+margin-left: 20px;
+color: #000000;
+}
+
+.range{
+    height: 6px;
+    width: 99px;
+    /* left: 108px;
+    top: 454px; */
+    border-radius: 4px;
+    background-color: #F2AA4C;
+    margin-top: 10px;
+    margin-left: 20px;
+    
+}
