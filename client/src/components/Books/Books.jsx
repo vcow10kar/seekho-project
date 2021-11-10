@@ -84,7 +84,6 @@ export default function Books() {
                     <p>Read Now</p>
                 </div>
             </div>
-
         </div>
     )
 }
