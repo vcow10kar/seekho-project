@@ -1,14 +1,17 @@
 import styles from './mybooks.module.css';
 import MyBooksIndividual from "./MyBooksIndividual";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import ReadingListLinks from './ReadingListLinks';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Link} from "react-router-dom";
+import axios from 'axios';
 
 function MyBooks() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const carouselRef = useRef();
+    const [items, setItems] = useState([]);
+    const [count, setCount] = useState(2);
 
     const links = [
         {
@@ -33,41 +36,65 @@ function MyBooks() {
         }
     ]
 
-    const items = [
-        {
-            id: 1,
-            imageUrl: "https://images-na.ssl-images-amazon.com/images/I/51k2g+1mSWL._SX329_BO1,204,203,200_.jpg",
-            title: "The Alchemist",
-            author: "Paulo Coelho"
-        },
+    const getReadlist = () => {
+        let readingListId = localStorage.getItem('readingList');
 
-        {
-            id: 2,
-            imageUrl: "https://images-eu.ssl-images-amazon.com/images/I/41ARHyZ3FuL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
-            title: "The Vanishing Half",
-            author: "Brit Bennett"
-        }, 
-        {
-            id: 3,
-            imageUrl: "https://images-eu.ssl-images-amazon.com/images/I/41nzI1lhIVL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
-            title: "The Promised Land",
-            author: "Barack Obama"
-        },
-
-        {
-            id: 4,
-            imageUrl: "https://images-eu.ssl-images-amazon.com/images/I/41gVhoPaE5L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
-            title: "Think Like a Monk",
-            author: "Jay Shetty"
+        if(!readingListId) {
+            window.location.pathname = '/signIn';
+        } else {
+            axios({
+                method: "get",
+                url: `http://localhost:5000/readingList/${readingListId}`,
+            })
+            .then(res => {
+                console.log(res.data.readingList.book);
+                setItems(res.data.readingList.book)
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            }) 
         }
-    ]
+    }
+
+    useEffect(() => {
+        getReadlist();
+    }, []);
+
+    // const items = [
+    //     {
+    //         id: 1,
+    //         imageUrl: "https://images-na.ssl-images-amazon.com/images/I/51k2g+1mSWL._SX329_BO1,204,203,200_.jpg",
+    //         title: "The Alchemist",
+    //         author: "Paulo Coelho"
+    //     },
+
+    //     {
+    //         id: 2,
+    //         imageUrl: "https://images-eu.ssl-images-amazon.com/images/I/41ARHyZ3FuL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
+    //         title: "The Vanishing Half",
+    //         author: "Brit Bennett"
+    //     }, 
+    //     {
+    //         id: 3,
+    //         imageUrl: "https://images-eu.ssl-images-amazon.com/images/I/41nzI1lhIVL._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
+    //         title: "The Promised Land",
+    //         author: "Barack Obama"
+    //     },
+
+    //     {
+    //         id: 4,
+    //         imageUrl: "https://images-eu.ssl-images-amazon.com/images/I/41gVhoPaE5L._SY264_BO1,204,203,200_QL40_FMwebp_.jpg",
+    //         title: "Think Like a Monk",
+    //         author: "Jay Shetty"
+    //     }
+    // ]
     return (
             
             <div className = {styles.myBooksPage}>
                 <h2 className = {styles.continue}>Continue where you left...</h2>
                 <Carousel
                     ref={carouselRef}
-                    itemsToShow={3}
+                    itemsToShow={2}
                     showArrows={false}
                     pagination={false}
                     onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
