@@ -48,6 +48,7 @@ passport.use(new GoogleStrategy({
         const token = newToken(user);
 
         user = {
+          userid: user._id,
           token: token, 
           userBookList: userBookList._id, 
           readingList: readingList._id
