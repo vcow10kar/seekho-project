@@ -58,6 +58,11 @@
     justify-content: center;
 }
 
+.exploreBook a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .bookTitle {
     font-size: 12px;
     line-height: 14.06px;

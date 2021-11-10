@@ -41,7 +41,29 @@ export default function Books() {
                 console.log("Error:", err);
             }) 
         }
+    }
 
+    const addToBookList = () => {
+        let bookListId = localStorage.getItem('userBookList');
+
+        if(!bookListId) {
+            window.location.pathname = '/signIn';
+        } else {
+            axios({
+                method: "patch",
+                url: `http://localhost:5000/userBookList/${bookListId}/books`,
+                data: {
+                    book: book._id
+                }
+            })
+            .then(res => {
+                console.log(res.data);
+                setBook(res.data.book);
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            }) 
+        }
     }
 
     useEffect(() => {
@@ -57,7 +79,7 @@ export default function Books() {
                     <p>Add to Readlist</p>
                 </div>
 
-                <div className = {styles.readNow}>
+                <div onClick = {addToBookList} className = {styles.readNow}>
                     <img src = "/logos/readNow.png" alt = "Add to ReadList"/>
                     <p>Read Now</p>
                 </div>

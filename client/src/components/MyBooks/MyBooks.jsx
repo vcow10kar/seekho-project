@@ -36,19 +36,21 @@ function MyBooks() {
         }
     ]
 
-    const getReadlist = () => {
-        let readingListId = localStorage.getItem('readingList');
+    const getBooklist = () => {
+        let bookListId = localStorage.getItem('userBookList');
 
-        if(!readingListId) {
+        console.log(bookListId);
+
+        if(!bookListId) {
             window.location.pathname = '/signIn';
         } else {
             axios({
                 method: "get",
-                url: `http://localhost:5000/readingList/${readingListId}`,
+                url: `http://localhost:5000/userBookList/${bookListId}`,
             })
             .then(res => {
-                console.log(res.data.readingList.book);
-                setItems(res.data.readingList.book)
+                console.log(res.data.userBookList);
+                setItems(res.data.userBookList.book)
             })
             .catch(err => {
                 console.log("Error:", err);
@@ -57,7 +59,7 @@ function MyBooks() {
     }
 
     useEffect(() => {
-        getReadlist();
+        getBooklist();
     }, []);
 
     // const items = [
@@ -94,7 +96,7 @@ function MyBooks() {
                 <h2 className = {styles.continue}>Continue where you left...</h2>
                 <Carousel
                     ref={carouselRef}
-                    itemsToShow={2}
+                    itemsToShow={3}
                     showArrows={false}
                     pagination={false}
                     onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
