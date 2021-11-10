@@ -14,6 +14,7 @@ export default function GoogleSignIn() {
         localStorage.setItem('token', "");
         localStorage.setItem('userBookList', "");
         localStorage.setItem('readingList', "");
+        localStorage.setItem('userId', "");
     }, []);
 
     function goToGoogle() {
@@ -35,10 +36,12 @@ export default function GoogleSignIn() {
                     userBookList: res.data.userBookList,
                     readingList: res.data.readingList
                 }
+
+                console.log(temp);
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
-                setUser(temp);
+                localStorage.setItem('userId', res.data.userid);
                 window.location.pathname = '/home';
             })
             .catch(err => {
@@ -52,7 +55,6 @@ export default function GoogleSignIn() {
             timer = setInterval(() => {
                 fetchUser();
                 console.log('Authenticated!');
-                //fetchUser();
                 if(timer) {
                     clearInterval(timer);
                 }

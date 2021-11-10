@@ -3,7 +3,7 @@ import {Box, Link} from "@mui/material";
 import styles from './signin.module.css';
 import axios from "axios";
 import GoogleSignIn from "./GoogleSignIn";
-import {SignInButton, FormText, LinkWrapper, AlertWrapper} from './SignInWrappers'
+import {SignInButton, FormText, LinkWrapper, AlertWrapper, PasswordMsg} from './SignInWrappers'
 
 export default function SignIn() {
 
@@ -43,6 +43,7 @@ export default function SignIn() {
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
+                localStorage.setItem('userId', res.data.userid);
                 window.location.pathname = '/home';
             }
         })
@@ -87,12 +88,13 @@ export default function SignIn() {
                         disableUnderline: true,
                 }}
                 placeholder = "Password"
-                helperText = "Password should have 8-20 alphanumeric characters & a special character"
-                sx={{mb: 5, borderColor: '#00000'}}
+                // helperText = "Password should have 8-20 alphanumeric characters & a special character"
+                sx={{mb: 2, borderColor: '#00000'}}
                 type="password"
                 id="outlined-disabled"
                 fullWidth autoFocus required
             /> 
+            <PasswordMsg>Password should have 8-20 alphanumeric characters & a special character</PasswordMsg>
 
             {passwordError ? <AlertWrapper severity="error">{passwordError}</AlertWrapper> : null}
 
@@ -102,7 +104,7 @@ export default function SignIn() {
               fullWidth
               disableElevation
               variant="contained"
-              sx={{ mt: 5, mb: 2, pt:2, pb:2}}
+              sx={{ mt: 3, mb: 2, pt:2, pb:2}}
             >
               SIGN IN
             </SignInButton  >
