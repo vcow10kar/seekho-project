@@ -3,8 +3,6 @@ import MyBooksIndividual from "./MyBooksIndividual";
 import { useState, useRef, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import ReadingListLinks from './ReadingListLinks';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Link} from "react-router-dom";
 import axios from 'axios';
 import NavBar from "../Navbar/Navbar";
 import { Footer } from '../Footer/Footer';
@@ -13,7 +11,7 @@ function MyBooks() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const carouselRef = useRef();
     const [items, setItems] = useState([]);
-    const [count, setCount] = useState(2);
+    // const [count, setCount] = useState(2);
 
     const links = [
         {

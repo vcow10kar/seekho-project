@@ -1,8 +1,10 @@
 .bookCoverPage {
     background-color: rgba(0, 0, 0, 0.9);
     width: 411px;
-    height: 823px;
+    height: 900px;
     margin: auto;
+    padding: 0px;
+    margin-bottom: 0px;
 }
 
 .bookCoverPage > img{

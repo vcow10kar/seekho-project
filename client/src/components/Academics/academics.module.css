@@ -1,3 +1,7 @@
+.academicsPage {
+    padding-bottom: 40px;
+}
+
 .academics {
     width: 100%;
     margin:0px 0px 0px 0px;
@@ -5,12 +9,13 @@
 }
 
 .academics > p {
-    font-size: 16px;
-    line-height: 18.75px;
-    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 23.44px;
+    font-weight: 900;
+    opacity: 0.8;
     text-align: left;
-    margin-left: 10px;
-    margin-bottom: 16px;
+    margin-left: 16px;
 }
 
 .academicFieldItem {
@@ -26,7 +31,14 @@
 .academicFieldItem > p {
     font-size: 12px;
     line-height: 14.06px;
-    font-weight: 300;
+    font-weight: 900;
+    opacity: 0.8;
     text-align: center;
-    margin-top: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
 }

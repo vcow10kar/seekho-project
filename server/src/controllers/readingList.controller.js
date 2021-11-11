@@ -26,9 +26,21 @@ router.get("/:id", async (req, res) => {
   .populate({path: 'book'})
   .populate({path: 'academic'})
   .lean().exec();
+  res.status(200).send({ readingList });
+});
+
+//Check if book is present in read list 
+router.get("/checkReadList/:id/:bookId", async (req, res) => {
+  console.log(req.params);
+  let readingList = await ReadingList.count({_id: req.params.id, book: {$in: [req.params.bookId]}});
 
   console.log(readingList);
-  res.status(200).send({ readingList });
+
+  if(readingList === 0) {
+    res.status(200).send({ message: false });
+  } else {
+    res.status(200).send({message: true});
+  }
 });
 
 // Updating a reading_list by id

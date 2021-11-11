@@ -25,6 +25,10 @@ function SeekhoLogo() {
 
     useEffect(() => {
         startAnimation();
+        localStorage.setItem('token', "");
+        localStorage.setItem('userBookList', "");
+        localStorage.setItem('readingList', "");
+        localStorage.setItem('userId', "");
     }, []);
 
     return (

@@ -32,12 +32,20 @@ export default function Splash() {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
   const carouselRef = useRef();
 
+  const handleNext = () => {
+    if(localStorage.getItem('userId')) {
+      window.location.pathname = '/explore';
+    } else {
+      window.location.pathname = '/signIn';
+    }
+  }
+
   const next = () => {
     if (activeItemIndex + 1 <= items.length - 1) {
       carouselRef.current.goTo(activeItemIndex + 1);
       setActiveItemIndex(activeItemIndex + 1);
     } else if (activeItemIndex + 1 === items.length) {
-      window.location.pathname = "/explore";
+      handleNext();
     }
   };
   return (
@@ -64,7 +72,7 @@ export default function Splash() {
       <div className={styles.skipnext}>
         <button
           id={styles.skipbtn}
-          onClick={() => (window.location.pathname = "/explore")}
+          onClick={handleNext}
         >
           SKIP
         </button>

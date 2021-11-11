@@ -51,9 +51,13 @@ export default function Explore() {
             <ExploreCarousel/>
             <div className = {styles.mainContent}>
                 <ExploreBooks categories = {categories}/>
-                <hr style = {{margin: "0px 10px"}}/>
-                <h2>Academic Books Section</h2>
-                <hr style = {{margin: "0px 10px"}}/>
+                
+                <div style = {{marginTop: '20px'}}>
+                    <hr style = {{ margin: "0px 10px" }}/>
+                    <p className = {styles.AcademicHeader}>Academic Books Section</p>
+                    <hr style = {{margin: "0px 10px"}}/>
+                </div>
+                
                 <ExploreAcademicBooks subjects = {subjects}/>
                 <AcademicFields />
             </div>

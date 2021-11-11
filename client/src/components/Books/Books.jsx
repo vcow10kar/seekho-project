@@ -5,6 +5,7 @@ import axios from 'axios';
 
 export default function Books() {
     const [book, setBook] = useState({});
+    const [message, setMessage] = useState("Add to Readlist");
     const {id}  = useParams();
     const getBook = () => {
         axios({
@@ -12,7 +13,6 @@ export default function Books() {
             url: `http://localhost:5000/books/${id}`,
         })
         .then(res => {
-            console.log(res.data);
             setBook(res.data.book);
         })
         .catch(err => {
@@ -35,7 +35,7 @@ export default function Books() {
             })
             .then(res => {
                 console.log(res.data);
-                setBook(res.data.book);
+                setMessage("Book added to ReadList!")
             })
             .catch(err => {
                 console.log("Error:", err);
@@ -57,7 +57,6 @@ export default function Books() {
                 }
             })
             .then(res => {
-                console.log(res.data);
                 setBook(res.data.book);
             })
             .catch(err => {
@@ -68,8 +67,28 @@ export default function Books() {
         window.location.pathname = `/displayBook/${id}`;
     }
 
+    const checkBookInReadList = () => {
+        let readList = localStorage.getItem("readingList");
+        axios({
+            method: "get",
+            url: `http://localhost:5000/readingList/checkReadList/${readList}/${id}`,
+        })
+        .then(res => {
+            console.log(res);
+            if(res.data.message) {
+                setMessage("Book present in ReadList");
+            }
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        })
+    }
+
     useEffect(() => {
         getBook();
+        if(localStorage.getItem("userBookList")) {
+            checkBookInReadList();
+        }
     }, []);
     return (
         <div className = {styles.bookCoverPage}>
@@ -78,7 +97,7 @@ export default function Books() {
             <div className = {styles.readDiv}>
                 <div onClick = {addToReadList} className = {styles.readList}>
                     <img src = "/logos/addReadList.png" alt = "Add to ReadList"/>
-                    <p>Add to Readlist</p>
+                    <p>{message}</p>
                 </div>
 
                 <div onClick = {addToBookList} className = {styles.readNow}>

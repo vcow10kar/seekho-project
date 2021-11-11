@@ -12,12 +12,8 @@ import NavBar from "../Navbar/Navbar";
 import { Footer } from '../Footer/Footer';
 
 export default function Home() {
-    const [activeItemIndex, setActiveItemIndex] = useState(0);
-    const [trending, setTrending] = useState([]);
-    const [recommended, setRecommended] = useState([]);
     const [bookList, setBookList] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [bookListId, setBookListId] = useState("");
+    const [bookListId, setBookListId] = useState(localStorage.getItem('userBookList'));
     const carouselRef = useRef();
 
     const handle = (data) => {
@@ -25,16 +21,13 @@ export default function Home() {
     }
 
     const getBooklist = () => {
-        setBookListId(localStorage.getItem('userBookList'));
-        console.log(localStorage.getItem('userBookList'));
-        setLoading(true);
         axios({
             method: "get",
             url: `http://localhost:5000/userBookList/${bookListId}`,
         })
         .then(res => {
-            console.log("Get Book List!", res);
-            handle(res.data.userBookList.book);
+            let data = res.data.userBookList.book;
+            setBookList(data);
         })
         .catch(err => {
             console.log("Error:", err);

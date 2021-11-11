@@ -26,7 +26,7 @@
     top: 202px;
     left: 411px;
     transform: translate(-50%, -50%);
-    color: black;
+    color: #333333;
 }
 
 .exploreCarouselButton {
@@ -76,6 +76,7 @@
     font-weight: 900;
     opacity: 0.8;
     text-align: center;
+    width: 135px;
     margin-bottom: 0px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -103,7 +104,7 @@
     width: 160.56px;
     height: 170.29px;
     /* opacity: 0.4; */
-    background-color: rgba(250, 189, 209, 0.4);
+    background-color: #FEEFF4;
     border-radius: 10px;
     display: flex;
     justify-content: center ;
@@ -129,4 +130,13 @@
     color: #13ABE6;
     height: 28px;
     width: 28px;
+}
+
+.AcademicHeader {
+    font-size: 24px;
+    font-weight: 900;
+    color: #333333;
+    margin: 0px;
+    padding: 0px 10px;
+    margin: auto;
 }

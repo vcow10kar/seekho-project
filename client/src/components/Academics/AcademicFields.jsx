@@ -1,5 +1,4 @@
 import AcademicFieldItem from "./AcademicFieldItem";
-import {Stack} from '@mui/material';
 import styles from './academics.module.css';
 import Carousel from "react-elastic-carousel";
 

@@ -32,6 +32,19 @@ router.get("/:id", async (req, res) => {
 });
 
 
+//Check if book is present in book list 
+router.get("/checkBookList/:id", async (req, res) => {
+
+  let bookList = await UserBookList.count({_id: req.params.id, book: {$in: [req.body.book]}});
+
+  if(bookList === 0) {
+    res.status(200).send({ message: false });
+  } else {
+    res.status(400).send({message: true});
+  }
+});
+
+
 //Updating Book List by Id
 
 router.patch("/:id/books", async (req, res) => {

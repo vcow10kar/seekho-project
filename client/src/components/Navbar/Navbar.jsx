@@ -36,11 +36,12 @@ function Navbar({disp}) {
     <div>
       {/* <h1>Navbar</h1> */}
       <Box className="navbar">
-        <Box onClick = {handleClick} className="navbar_inner">
+        <Box className="navbar_inner">
           <img
             className="navbar_applogo"
             src="/assets/SeekhoMainLogo.png"
             alt="seekho"
+            onClick = {handleClick}
           />
           <ToggleButtonGroup
             className="navbar_menutogglebtn"

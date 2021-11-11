@@ -1,6 +1,6 @@
 import axios from "axios";
 import {GoogleButton} from './SignInWrappers';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const init = {
     token: "",
@@ -9,13 +9,7 @@ const init = {
 }
 export default function GoogleSignIn() {
 
-    const [user, setUser] = useState(init);
-    useEffect (() => {
-        localStorage.setItem('token', "");
-        localStorage.setItem('userBookList', "");
-        localStorage.setItem('readingList', "");
-        localStorage.setItem('userId', "");
-    }, []);
+    // const [user, setUser] = useState(init);
 
     function goToGoogle() {
         let timer = null;
@@ -37,7 +31,7 @@ export default function GoogleSignIn() {
                     readingList: res.data.readingList
                 }
 
-                console.log(temp);
+                timer = null;
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
@@ -49,42 +43,17 @@ export default function GoogleSignIn() {
                 console.log("Error", err);
             })
 
-            //newWindow.close();
         }
-        if(newWindow) {
-            timer = setInterval(() => {
-                fetchUser();
-                console.log('Authenticated!');
-                if(timer) {
-                    clearInterval(timer);
-                }
-            }, 500);
-        }
-
+        
+        timer = setInterval(() => {
+            fetchUser();
+            console.log('Authenticated!');
+            if(timer) {
+                clearInterval(timer);
+            }
+        }, 500);
         
     }
-
-    //function fetchUser() {
-        
-    // }
-
-    // async function goToGoogle() {
-    //    axios({
-    //     method: 'get',
-    //     url: 'http://localhost:5000/auth/google',
-    //     headers: {
-    //         "Access-Control-Allow-Origin": "*"
-    //     }
-    // })
-    // .then(res => {
-    //     console.log("Response:", res);
-    // })
-    // .catch(err => {
-    //     console.log("Error:", err);
-    // })
-    // }
-
-
     return (
         <GoogleButton
                 type="submit"

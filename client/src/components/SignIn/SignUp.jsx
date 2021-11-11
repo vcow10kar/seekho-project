@@ -3,7 +3,7 @@ import { Box, Link } from "@mui/material";
 import styles from './signin.module.css';
 import axios from "axios";
 import GoogleSignIn from "./GoogleSignIn";
-import {SignInButton as SignUpButton, FormText, LinkWrapper, AlertWrapper, PasswordMsg} from './SignInWrappers'
+import {SignInButton as SignUpButton, FormText, LinkWrapper, AlertWrapper, PasswordMsg, FormTextPassword} from './SignInWrappers'
 
 export default function SignUp() {
 
@@ -75,7 +75,7 @@ export default function SignUp() {
 
                 {emailError ? <AlertWrapper severity="error">{emailError}</AlertWrapper> : null}
                 
-                <FormText
+                <FormTextPassword
                     margin = "normal"
                     id = "password"
                     //label = "Password"

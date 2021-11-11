@@ -34,6 +34,23 @@ const FormText = styled(TextField)({
     }
 })
 
+const FormTextPassword = styled(TextField)({
+    width: '280px',
+    height: '54px',
+    backgroundColor: '#dcddde',
+    borderColor: '#dcddde',
+    margin: '0px auto',
+    paddingLeft: '20px',
+    paddingTop: '13px',
+    marginBottom: '4px',
+    paddingBottom: '15px',
+
+    '&.MuiTextField-root' : {
+        border: '0px solid black',
+        borderRadius: '12px'
+    }
+})
+
 const LinkWrapper = styled(Box)`
     font-size: 12px;
     color: black;
@@ -85,10 +102,10 @@ const GoogleButton = styled(Button)({
 const PasswordMsg = styled.p`
     font-size: 12px;
     color: black;
-    opacity: 0.7;
+    opacity: 0.4;
     margin: 0px;
     padding: 0px;
     text-align: center;
 `
 
-export {SignInButton, FormText, LinkWrapper, AlertWrapper, GoogleButton, PasswordMsg}
+export {SignInButton, FormText, LinkWrapper, AlertWrapper, GoogleButton, PasswordMsg, FormTextPassword}

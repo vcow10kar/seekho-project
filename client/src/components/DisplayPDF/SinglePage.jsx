@@ -7,7 +7,7 @@ console.log(samplePDF);
 
 function SinglePage() {
   const [numPages, setNumPages] = useState(null);
-  const [pdf, setPdf] = React.useState(samplePDF);
+  // const [pdf, setPdf] = React.useState(samplePDF);
   const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
 
   function onDocumentLoadSuccess({ numPages }) {

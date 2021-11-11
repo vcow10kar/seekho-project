@@ -3,7 +3,7 @@ import {Box, Link} from "@mui/material";
 import styles from './signin.module.css';
 import axios from "axios";
 import GoogleSignIn from "./GoogleSignIn";
-import {SignInButton, FormText, LinkWrapper, AlertWrapper, PasswordMsg} from './SignInWrappers'
+import {SignInButton, FormText, LinkWrapper, AlertWrapper, PasswordMsg, FormTextPassword} from './SignInWrappers'
 
 export default function SignIn() {
 
@@ -79,7 +79,7 @@ export default function SignIn() {
                 {emailError ? <AlertWrapper severity="error">{emailError}</AlertWrapper> : null}
 
 
-                <FormText
+                <FormTextPassword
                     margin = "normal"
                     id = "password"
                     //label = "Password"
@@ -90,7 +90,7 @@ export default function SignIn() {
                     }}
                     placeholder = "Password"
                     // helperText = "Password should have 8-20 alphanumeric characters & a special character"
-                    sx={{mb: 2, borderColor: '#00000'}}
+                    sx={{mb: 0, borderColor: '#00000'}}
                     type="password"
                     id="outlined-disabled"
                     fullWidth autoFocus required
