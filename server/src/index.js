@@ -129,14 +129,14 @@ app.get(
   })
 );
 /*---------FAcebook end ------*/
-app.get("/auth/facebook", passport.authenticate("facebook",{scope:'email'}));
+app.get("/auth/facebook", passport.authenticate("facebook",{scope:'name'}));
 
 app.get(
   "/auth/facebook/callback",
-  passport.authenticate("facebook", { failureRedirect: "/" }),
+  passport.authenticate("facebook", { failureRedirect: "http://localhost:3000/signIn" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.send('Authorized');
+    res.redirect('http://localhost:3000/home');
   }
 );
 /*------facebook end-------- */
