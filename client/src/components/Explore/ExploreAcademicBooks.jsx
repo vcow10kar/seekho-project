@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import styles from './explore.module.css';
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import ExploreSubjectBooks from "./ExploreSubjectBooks";
 
 const ExploreAcademicBooks = ({subjects}) => {
@@ -10,7 +11,10 @@ const ExploreAcademicBooks = ({subjects}) => {
             {subjects.map(item => {
                return (
                 <div key = {item.id}>
-                    <p className = {styles.bookCategory}>Academic Books for {item.subject_name}</p>
+                    <div className = {styles.exploreCategoriesDiv}>
+                        <p className = {styles.bookCategory}>Academic Books for {item.subject_name}</p>
+                        <SwapHorizIcon/>
+                    </div>
                     <ExploreSubjectBooks subject = {item._id}/>
                 </div>
                )

@@ -48,6 +48,9 @@ export default function Explore() {
             <p>EXPLORE PAGE!</p>
             <ExploreCarousel/>
             <ExploreBooks categories = {categories}/>
+            <hr/>
+            <h2>Academic Books Section</h2>
+            <hr/>
             <ExploreAcademicBooks subjects = {subjects}/>
             <AcademicFields />
         </div>

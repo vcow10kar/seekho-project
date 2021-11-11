@@ -1,0 +1,21 @@
+.resume-reading-carousel {
+    text-align: left;
+    width: 90%;
+}
+
+.resume-reading-carousel > * {
+    border: 1px solid black;
+}
+
+.rec.rec-slider-container {
+    overflow: visible;
+}
+
+.rec.rec-carousel-item {
+    max-width: 209px
+}
+
+.rec.rec-carousel-wrapper {
+    width: inherit;
+}
+

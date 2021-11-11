@@ -5,13 +5,14 @@
 
 
 .resume{
-width: 209px;
-height: 92px;
-left: 40px;
-top: 393px;
-display: flex;
-background: #FABBD0;
-border-radius: 10px;
+    width: 209px;
+    height: 92px;
+    left: 40px;
+    top: 393px;
+    display: flex;
+    background-color: rgba(250, 189, 209, 0.23);
+    border-radius: 10px;
+
 }
 
 

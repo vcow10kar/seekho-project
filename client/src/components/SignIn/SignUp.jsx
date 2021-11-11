@@ -57,9 +57,8 @@ export default function SignUp() {
         <Box component = "form" onSubmit = {handleClick} className = {styles.signin}>
             <img src = "/logos/Group_22.png" alt = "seekho" style = {{margin: 'auto'}}/>
 
-            <h3 style = {{marginTop: '0px'}}>SIGN UP</h3>
+            <p className = {styles.signInPageHeader}>SIGN UP</p>
 
-            
             <FormText
                 margin = "normal"
                 id = "email"
@@ -86,7 +85,7 @@ export default function SignUp() {
                 }}
                 placeholder = "Password"
                 // helperText = "Password should have 8-20 alphanumeric characters & a special character"
-                sx={{mb: 2}}
+                sx={{mb: 0}}
                 type="password"
                 fullWidth autoFocus required
             />
@@ -104,7 +103,7 @@ export default function SignUp() {
             </SignUpButton  >
 
             <LinkWrapper>
-                <Link href="/signIn" underline="hover" sx = {{color: 'black'}}>{'Already have an account?'}</Link>
+                <Link href="/signIn" underline="hover" sx = {{color: 'black', fontSize: '14px'}}>{'Already have an account?'}</Link>
             </LinkWrapper>
 
             

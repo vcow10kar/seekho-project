@@ -22,9 +22,10 @@ const FormText = styled(TextField)({
     height: '54px',
     backgroundColor: '#dcddde',
     borderColor: '#dcddde',
-    margin: '10px auto',
+    margin: '0px auto',
     paddingLeft: '20px',
     paddingTop: '13px',
+    marginBottom: '24px',
     paddingBottom: '15px',
 
     '&.MuiTextField-root' : {

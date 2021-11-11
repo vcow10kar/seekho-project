@@ -70,6 +70,12 @@
     opacity: 0.8;
     text-align: center;
     margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
 }
 
 .bookAuthor {
@@ -101,4 +107,19 @@
     height: 158px;
     border-radius: 8px;
     margin: auto;
+}
+
+.exploreCategoriesDiv {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 90%;
+    margin: auto;
+}
+
+.exploreCategoriesDiv > svg {
+    text-align: right;
+    margin: auto;
+    color: #13ABE6;
+    height: 28px;
+    width: 28px;
 }

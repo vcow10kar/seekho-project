@@ -5,10 +5,11 @@ export const Resume=({resumeColor,resumeLink,resumeTag,resumeAuthor})=>{
         <div>
     
         <div className="resume-parent">
-        <div className="resume" style={{background :`${resumeColor}`}}>
+        <div className="resume">
+        {/* style={{background :`${resumeColor}`}} */}
 
             
-            <div className="resume-coverImage"><img src={resumeLink} alt="coverimg"  /></div>
+            <div ><img className="resume-coverImage" src={resumeLink} alt="coverimg"  /></div>
             <div>
             <div className="resume-tag">{resumeTag}</div>
             

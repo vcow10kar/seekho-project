@@ -1,7 +1,15 @@
 import styles from './explore.module.css';
 import {Link} from 'react-router-dom';
+import { useState } from 'react';
+import Books from '../Books/Books';
 
 const ExploreItem = ({data}) => {
+    // const [click, setClick] = useState(false);
+
+    // const handleClick = () => {
+    //     setClick(!click);
+    // }
+
     return (
         <div className = {styles.exploreBook} >
             <div>
@@ -14,10 +22,11 @@ const ExploreItem = ({data}) => {
                             <p className = {styles.bookTitle}>{data.title}</p>
                             <p className = {styles.bookAuthor}>by {data.author}</p>
                         </div>
-                        
                     </div>
                 </Link>
             </div>
+
+            {/* {click ? <Books id = {data._id}/> : null} */}
             
         </div>
     )

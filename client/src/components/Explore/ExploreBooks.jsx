@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import styles from './explore.module.css';
 import ExploreBookCategory from "./ExploreBookCategory";
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 
 const ExploreBooks = ({categories}) => {
 
@@ -10,7 +11,10 @@ const ExploreBooks = ({categories}) => {
             {categories.map(item => {
                return (
                 <div key = {item.id}>
-                    <p className = {styles.bookCategory}>Best Selling in {item.category_name}</p>
+                    <div className = {styles.exploreCategoriesDiv}>
+                        <p className = {styles.bookCategory}>Best Selling in {item.category_name}</p>
+                        <SwapHorizIcon/>
+                    </div>
                     <ExploreBookCategory category = {item._id}/>
                 </div>
                )

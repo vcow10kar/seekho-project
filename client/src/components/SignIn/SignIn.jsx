@@ -56,7 +56,7 @@ export default function SignIn() {
         <Box component = "form" onSubmit = {handleClick} className = {styles.signin} autoComplete="off">
             <img src = "/logos/Group_22.png" alt = "seekho" style = {{margin: 'auto', marginBottom: '0px'}}/>
 
-            <h3 style = {{marginTop: '0px'}}>SIGN IN</h3>
+            <p className = {styles.signInPageHeader}>SIGN IN</p>
 
             
             <FormText
@@ -110,7 +110,7 @@ export default function SignIn() {
             </SignInButton  >
 
             <LinkWrapper>
-                <Link href="/signUp" underline="hover" sx = {{color: 'black'}}>{'Don’t have an account? Sign up'}</Link>
+                <Link href="/signUp" underline="hover" sx = {{color: 'black', fontSize: '14px'}}>Don’t have an account? <span className = {styles.bold}> Sign up </span></Link>
             </LinkWrapper>
 
             <GoogleSignIn/>
