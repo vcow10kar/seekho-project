@@ -5,10 +5,10 @@ import {Resume} from "./Resume";
 import { ResCard } from "./ResCard";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-// import "./home.module.css";
+import "./home.module.css";
+import styles from  "./home.module.css";
 import Carousel from "react-elastic-carousel";
-
-
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 export default function Home() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const [trending, setTrending] = useState([]);
@@ -47,19 +47,25 @@ export default function Home() {
             <p>This is the home page!!!!</p>
             <RecomCard/>
 
-            <div className = "resume-reading-carousel">
+            <div className = {styles.exploreCategoriesDiv}>
+                <p className = {styles.resumeReadingTitle}>Resume Reading</p>
+                <SwapHorizIcon/>
+            </div>
+
+            <div className = {styles.carouselParent}>
                 <Carousel
                         ref={carouselRef}
                         itemsToShow={1}
                         showArrows={false}
                         pagination={false}
                         initialActiveIndex={1}
+                        className = {styles.resumeReadingCarousel}
                         onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
                     >
                         {bookList.map(item => {
                                     return (
                                         
-                                        <Resume resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/> 
+                                        <Resume resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/> 
                                             
                                     )
                                 })}

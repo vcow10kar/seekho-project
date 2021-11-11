@@ -1,21 +1,48 @@
-.resume-reading-carousel {
-    text-align: left;
-    width: 90%;
+.carouselParent {
+    overflow-x: hidden;
 }
 
-.resume-reading-carousel > * {
+.resumeReadingCarousel {
+    text-align: left;
+    width: 100%;
+    
+}
+
+.resumeReadingCarousel > * {
     border: 1px solid black;
 }
 
-.rec.rec-slider-container {
+.resumeReadingCarousel > .rec.rec-slider-container {
     overflow: visible;
 }
 
-.rec.rec-carousel-item {
-    max-width: 209px
+.resumeReadingCarousel > .rec.rec-carousel-item {
+    width: 209px
 }
 
-.rec.rec-carousel-wrapper {
-    width: inherit;
+.resumeReadingTitle {
+    font-size:  20px;
+    font-weight: 900;
+    line-height: 23.44px;
+    text-align: left;
+    color: black;
+    opacity: 0.8;
+    padding: 0px;
+}
+
+.exploreCategoriesDiv {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100%;
+    margin: auto;
+}
+
+
+.exploreCategoriesDiv > svg {
+    text-align: right;
+    margin: auto;
+    color: #13ABE6;
+    height: 28px;
+    width: 28px;
 }
 

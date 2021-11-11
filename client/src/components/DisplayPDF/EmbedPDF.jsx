@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-function EmbedPDF() {
+function EmbedPDF({}) {
 
     const [link, setLink] = useState("");
 
@@ -17,7 +17,7 @@ function EmbedPDF() {
     })
 
     return (
-        <iframe src="https://drive.google.com/file/d/15dSTdZznkouffW3gzsZJXUvN-ppOdvTL/preview" width="400" height="520" allow="autoplay"></iframe>
+        <iframe src="https://drive.google.com/file/d/15dSTdZznkouffW3gzsZJXUvN-ppOdvTL/preview" border = "0" width="400" height="520" allow="autoplay"></iframe>
     )
 }
 

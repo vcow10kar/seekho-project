@@ -28,7 +28,7 @@
 .book > a:visited, a:link {
     text-decoration: none;
     color: inherit;
-}s
+}
 
 .book > div:nth-child(1) {
     margin: 0px;
