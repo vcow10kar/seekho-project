@@ -64,6 +64,8 @@ export default function Books() {
                 console.log("Error:", err);
             }) 
         }
+
+        window.location.pathname = `/displayBook/${id}`;
     }
 
     useEffect(() => {

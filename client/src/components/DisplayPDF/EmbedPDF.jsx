@@ -1,23 +1,33 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 
-function EmbedPDF({}) {
+function EmbedPDF() {
+    const obj = useParams();
+    console.log(obj);
+    const {id} = useParams();
+    const [book, setBook] = useState({});
+    
+    const getBook = () => {
+        axios({
+            method: "get",
+            url: `http://localhost:5000/books/${id}`,
+        })
+        .then(res => {
+            console.log(res.data);
+            setBook(res.data.book);
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        })
+    }
 
-    const [link, setLink] = useState("");
-
-    axios({
-        method: "get",
-        url: "https://www.googleapis.com/drive/v3/files/15dSTdZznkouffW3gzsZJXUvN-ppOdvTL"
-    })
-    .then(res => {
-        console.log(res);
-    })
-    .catch(err => {
-        console.log("Error:", err);
-    })
+    useEffect(() => {
+        getBook();
+    }, []);
 
     return (
-        <iframe src="https://drive.google.com/file/d/15dSTdZznkouffW3gzsZJXUvN-ppOdvTL/preview" border = "0" width="400" height="520" allow="autoplay"></iframe>
+        <iframe src = {book.pdf_file_url ? book.pdf_file_url : "https://drive.google.com/file/d/1ZwgUkCbVXdia-iwq8jHa-B3Zldb7cZw7/preview"} border = "0" width="400" height="510" allow="autoplay"></iframe>
     )
 }
 
