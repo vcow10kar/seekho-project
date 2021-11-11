@@ -10,15 +10,15 @@ import SinglePage from "./components/DisplayPDF/SinglePage";
 import Profile from "./components/profile/profile";
 import EmbedPDF from "./components/DisplayPDF/EmbedPDF";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import { Footer } from "./components/Footer/Footer";
+import SeekhoLogo from "./components/InitialPages/SeekhoLogo";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={Splash} />
+          <Route exact path="/" component={SeekhoLogo} />
+          <Route path = "/splash" component = {Splash}/>
           <Route path="/myBooks" component={MyBooks} />
           <Route path="/signUp" component={SignUp} />
           <Route path="/signIn" component={SignIn} />
