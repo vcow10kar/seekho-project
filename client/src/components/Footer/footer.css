@@ -25,33 +25,87 @@
 }
 .footer_homebtn {
   position: absolute;
-  left: 15%;
+  margin-left: 38px;
   bottom: 8.33%;
   font-family: Roboto;
   cursor: pointer;
-  color: #698089;
 }
+
+.footer_homebtn > img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.7;
+}
+
+.footer_homebtn > div {
+  margin: auto;
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
+}
+
 .footer_explorebtn {
   position: absolute;
-  left: 30%;
+  margin-left: 120px;
   bottom: 8.33%;
   font-family: Roboto;
   cursor: pointer;
-  color: #698089;
 }
+
+.footer_explorebtn > img {
+  width: 26px;
+  height: 26px;
+  opacity: 1.5;
+}
+
+.footer_explorebtn > div {
+  margin: auto;
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
+}
+
+
 .footer_booksbtn {
   position: absolute;
-  left: 49%;
+  margin-left: 200px;
   bottom: 8.33%;
   font-family: Roboto;
   cursor: pointer;
   color: #698089;
 }
+
+.footer_booksbtn > img {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+}
+
+.footer_booksbtn > div {
+  margin: auto;
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
+}
+
 .footer_profilebtn {
   position: absolute;
-  left: 72%;
+  margin-left: 300px;
   bottom: 8.33%;
   font-family: Roboto;
   cursor: pointer;
   color: #698089;
+}
+
+.footer_profilebtn > img {
+  width: 26px;
+  height: 26px;
+  opacity: 1;
+}
+
+.footer_profilebtn > div {
+  margin: auto;
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
 }

@@ -2,8 +2,23 @@ import "./profile.css";
 import vector9 from "./vector9.png";
 import { ProfileDiv } from "./profile_div";
 import NavBar from "../Navbar/Navbar";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Profile({disp}) {
+  const [email, setEmail] = useState(null);
+
+  useEffect(() => {
+    const userId = localStorage.getItem('userId');
+    console.log(userId);
+    axios.get(`http://localhost:5000/users/${userId}`)
+    .then(res => {
+      setEmail(res.data.user.email)
+    })
+    .catch(err => {
+      console.log("Error:", err);
+    })
+  }, []);
   return (
     <div className = "profilePage">
       <NavBar disp = {"/explore"}/>
@@ -13,8 +28,7 @@ export default function Profile({disp}) {
           <div id="innersection1">
             <div id="circlular-profile"></div>
             <div id="user_div">
-              <p id="username">Vishal Rathod</p>
-              <p id="user_id">@Vishal</p>
+              <p id="user_id">{email}</p>
             </div>
             <div id="arrow-icon">
               <img className="arrow_icon" src={vector9} alt="vector9.png" />

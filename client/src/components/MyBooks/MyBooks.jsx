@@ -11,6 +11,8 @@ function MyBooks() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const carouselRef = useRef();
     const [items, setItems] = useState([]);
+    const [bookList, setBookList] = useState([]);
+    const [readList, setReadList] = useState([]);
     // const [count, setCount] = useState(2);
 
     const links = [
@@ -39,7 +41,7 @@ function MyBooks() {
     const getBooklist = () => {
         let bookListId = localStorage.getItem('userBookList');
 
-        console.log(bookListId);
+        // console.log(bookListId);
 
         if(!bookListId) {
             window.location.pathname = '/signIn';
@@ -49,7 +51,6 @@ function MyBooks() {
                 url: `http://localhost:5000/userBookList/${bookListId}`,
             })
             .then(res => {
-                console.log(res.data.userBookList);
                 setItems(res.data.userBookList.book)
             })
             .catch(err => {
@@ -59,7 +60,29 @@ function MyBooks() {
     }
 
     useEffect(() => {
-        getBooklist();
+        //getBooklist();
+        let userBookList = localStorage.getItem('userBookList');
+        let readingList = localStorage.getItem('readingList');
+
+        // console.log(userBookList, readingList);
+
+        if(userBookList && readingList) {
+            axios.get(`http://localhost:5000/userBookList/${userBookList}`)
+            .then(res => {
+                setBookList(res.data.userBookList);
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            })
+
+            axios.get(`http://localhost:5000/readingList/${readingList}`)
+            .then(res => {
+                setReadList(res.data.readingList);
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            })
+        }
     }, []);
 
     // const items = [
@@ -130,7 +153,7 @@ function MyBooks() {
 
                     <div>
                         {links.map(item => {
-                            return <ReadingListLinks link = {item}/>
+                            return <ReadingListLinks userBookList = {bookList} readingList = {readList} link = {item}/>
                         })}
                     </div>
 

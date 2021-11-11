@@ -3,8 +3,6 @@ import { Document, Page } from "react-pdf";
 
 const samplePDF = "/sample.pdf"
 
-console.log(samplePDF);
-
 function SinglePage() {
   const [numPages, setNumPages] = useState(null);
   // const [pdf, setPdf] = React.useState(samplePDF);

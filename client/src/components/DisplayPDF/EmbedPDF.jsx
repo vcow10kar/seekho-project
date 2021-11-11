@@ -17,7 +17,6 @@ function EmbedPDF() {
             url: `http://localhost:5000/books/${id}`,
         })
         .then(res => {
-            console.log(res.data);
             setBook(res.data.book);
         })
         .catch(err => {

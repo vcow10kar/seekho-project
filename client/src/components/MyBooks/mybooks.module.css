@@ -113,7 +113,7 @@
     font-weight: 700;
     width: 92%;
     display: grid;
-    grid-template-columns: 5% 90% 5%;
+    grid-template-columns: 5% 85% 5% 5%;
     gap: 5px;
     margin: 0px 15px;
 }
@@ -123,11 +123,20 @@
     opacity: 1.2;
 }
 
-.readingLinks > p {
+.readingLinks > .text {
     margin-top: 8px;
     margin-bottom: 8px;
     padding-left: 4px;
     opacity: 0.8;
+}
+
+.readingLinks > .count{
+    margin-top: 6px;
+    opacity: 0.8;
+}
+
+.readingLinks > img {
+    margin-top: 8px;
 }
 
 .linkOpacity {

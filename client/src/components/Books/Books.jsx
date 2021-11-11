@@ -10,7 +10,7 @@ export default function Books() {
     const {id}  = useParams();
 
     const closeWindow = () => {
-        window.location.pathname = "/home";
+        window.location.pathname = "/explore";
     }
 
     const getBook = () => {
