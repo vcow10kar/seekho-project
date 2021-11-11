@@ -1,0 +1,62 @@
+.main {
+  display: flex;
+  gap: 10px;
+}
+
+.line {
+  margin-top: 0px;
+}
+
+.navbar {
+  display: flex;
+  margin-bottom: 0px;
+  margin-top:10px;
+
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+.clearAll{
+    text-align: end;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: #13ABE6;  
+    margin-top: 10px; 
+    margin-left: 20px; 
+}
+
+.heading {
+    
+    
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 21px;
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #000;
+  
+}
+
+.results {
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+  margin-left: 10px;
+}
