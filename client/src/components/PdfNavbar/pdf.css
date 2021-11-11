@@ -1,0 +1,63 @@
+.text{
+height: 19px;
+width: 212px;
+left: 51px;
+top: 17px;
+border-radius: nullpx;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+margin: auto;
+
+}
+.vector0 {
+    margin: auto;
+    height: 23px;
+width: 20px;
+left: 286px;
+top: 15px;
+border-radius: 0px;
+
+}
+.vector2 {
+    margin: auto;
+    height: 23px;
+width: 20px;
+left: 286px;
+top: 15px;
+border-radius: 0px;
+
+}
+.vector3 {
+    margin: auto;
+    height: 23px;
+width: 20px;
+left: 286px;
+top: 15px;
+border-radius: 0px;
+
+}
+.vector5 {
+    margin: auto;
+    height: 23px;
+width: 20px;
+left: 286px;
+top: 15px;
+border-radius: 0px;
+
+}
+.parent{
+    display: flex;
+    gap: 20px;
+    height: 54px;
+width: 411px;
+left: 0px;
+top: 0px;
+border-radius: 0px;
+margin: auto;
+/* background-color: #c4c4c4; */
+}
