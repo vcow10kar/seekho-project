@@ -8,28 +8,46 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import CollectionsBookmarkOutlinedIcon from "@mui/icons-material/CollectionsBookmarkOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import "./footer.css";
-
 function Footer() {
+  const goToHome = () => {
+    window.location.pathname = '/home';
+  }
+
+  const goToExplore = () => {
+    window.location.pathname = '/explore';
+  }
+
+  const goToMyBooks = () => {
+    window.location.pathname = '/myBooks';
+  }
+
+  const goToProfile = () => {
+    window.location.pathname = '/profile';
+  }
+
   return (
-    <div>
+    <div className = "footerComponent">
       <Box className="footer">
-        <div className="footer_homebtn">
-          <HomeOutlinedIcon></HomeOutlinedIcon>
+        <div onClick = {goToHome} className="footer_homebtn">
+          <HomeOutlinedIcon/>
           <div>Home</div>
         </div>
-        <div className="footer_explorebtn">
-          <ExploreOutlinedIcon></ExploreOutlinedIcon>
+        <div onClick = {goToExplore} className="footer_explorebtn">
+          <ExploreOutlinedIcon/>
           <div>Explore</div>
         </div>
-        <div className="footer_booksbtn">
-          <CollectionsBookmarkOutlinedIcon></CollectionsBookmarkOutlinedIcon>
+        <div onClick = {goToMyBooks} className="footer_booksbtn">
+          <CollectionsBookmarkOutlinedIcon/>
           <div>My Books</div>
         </div>
-        <div className="footer_profilebtn">
-          <AccountCircleOutlinedIcon></AccountCircleOutlinedIcon>
+        <div onClick = {goToProfile} className="footer_profilebtn">
+          <AccountCircleOutlinedIcon/>
           <div>Profile</div>
         </div>
       </Box>
+      <div className = "footerBottom">
+
+      </div>
     </div>
   );
 }

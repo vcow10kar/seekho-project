@@ -1,7 +1,17 @@
-
-
 hr {
   color: lightgray;
+}
+
+.profilePage {
+  padding: 0px;
+  margin: 0px;
+}
+
+.mainContent {
+  width: 411px;
+  padding: 0px;
+  padding-top: 83px;
+  padding-left: 10px;
 }
 
 #you {

@@ -18,6 +18,11 @@
     width: 100%;
 }
 
+.mainContent {
+    padding-top: 80px;
+    margin: 0px 10px;
+}
+
 .centered {
     /* position: relative; */
     top: 202px;
@@ -29,10 +34,8 @@
 .exploreCarouselButton {
     width: 411px;
     margin: auto;
-    position: relative;
-
-    /* top: 234px;
-    left: 627px; */
+    top: 203px;
+    z-index: 2;
 }
 
 .exploreCarouselImage {

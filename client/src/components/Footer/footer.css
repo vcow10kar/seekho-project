@@ -1,17 +1,31 @@
+.footerComponent {
+  /* width: 100%; */
+  margin: 0px 20px;
+}
+
+.footerBottom {
+  width: 391px;
+  height: 100px;
+  padding: 0px;
+  background-color: white;
+  position: fixed;
+  top: 800px;
+  margin-left: 0px;
+}
+
 .footer {
-  position: absolute;
   width: 371px;
   height: 55px;
-  left: 20px;
-  top: 660px;
-
+  top: 800px;
+  margin: auto;
   background: #aedef1;
   border-radius: 30px;
+  position: fixed;
+  z-index: 1;
 }
 .footer_homebtn {
   position: absolute;
   left: 15%;
-
   bottom: 8.33%;
   font-family: Roboto;
   cursor: pointer;

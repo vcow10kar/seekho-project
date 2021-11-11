@@ -54,19 +54,20 @@ function ExploreCarousel() {
                                 <ExploreCarouselItem key = {item.id} imageUrl = {item.imageUrl} color = {item.color} title = {item.title}/>
                             )
                         })}
-            </Carousel>
-
             <div className = {styles.exploreCarouselButton} style={{ display: "flex", justifyContent: "center" }}>
                 {items.map((_, i) => (
-                <div>
-                    <Button
-                    key={i}
-                    active={i === activeItemIndex}
-                    onClick={() => carouselRef.current.goTo(i)}
-                    />
-                </div>
+                    <div>
+                        <Button
+                        key={i}
+                        active={i === activeItemIndex}
+                        onClick={() => carouselRef.current.goTo(i)}
+                        />
+                    </div>
                 ))}
             </div>
+            </Carousel>
+
+            
 
         </div>
     )

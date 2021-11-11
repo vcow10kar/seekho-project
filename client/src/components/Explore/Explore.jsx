@@ -6,6 +6,7 @@ import ExploreAcademicBooks from './ExploreAcademicBooks';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import NavBar from "../Navbar/Navbar";
+import { Footer } from '../Footer/Footer';
 
 export default function Explore() {
     const [categories, setCategories] = useState([]);
@@ -44,15 +45,22 @@ export default function Explore() {
         getAllSubjects();
     }, []);
     return (
-        <div className = {styles.explorePage}>
-            <NavBar/>
+        <div>
+            <div className = {styles.explorePage}>
+            <NavBar disp = {"/profile"}/>
             <ExploreCarousel/>
-            <ExploreBooks categories = {categories}/>
-            <hr/>
-            <h2>Academic Books Section</h2>
-            <hr/>
-            <ExploreAcademicBooks subjects = {subjects}/>
-            <AcademicFields />
+            <div className = {styles.mainContent}>
+                <ExploreBooks categories = {categories}/>
+                <hr style = {{margin: "0px 10px"}}/>
+                <h2>Academic Books Section</h2>
+                <hr style = {{margin: "0px 10px"}}/>
+                <ExploreAcademicBooks subjects = {subjects}/>
+                <AcademicFields />
+            </div>
+            
         </div>
+        <Footer/>
+        </div>
+        
     )
 }

@@ -10,6 +10,7 @@ import styles from  "./home.module.css";
 import Carousel from "react-elastic-carousel";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import NavBar from "../Navbar/Navbar";
+import { Footer } from '../Footer/Footer';
 
 export default function Home() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -45,17 +46,19 @@ export default function Home() {
     }, []);
 
     return (
-        <div>
-            <NavBar/>
+        <div className = {styles.homePage}>
+            <NavBar disp = {"/profile"}/>
+
+            <div className = {styles.mainContent}>
             <RecomCard/>
 
-            <div className = {styles.exploreCategoriesDiv}>
-                <p className = {styles.resumeReadingTitle}>Resume Reading</p>
-                <SwapHorizIcon/>
-            </div>
+                <div className = {styles.exploreCategoriesDiv}>
+                    <p className = {styles.resumeReadingTitle}>Resume Reading</p>
+                    <SwapHorizIcon/>
+                </div>
 
-            <div className = {styles.carouselParent}>
-                <Carousel
+                <div className = {styles.carouselParent}>
+                    <Carousel
                         ref={carouselRef}
                         itemsToShow={1}
                         showArrows={false}
@@ -65,14 +68,14 @@ export default function Home() {
                         onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
                     >
                         {bookList.map(item => {
-                                    return (
-                                        
-                                        <Resume resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/> 
-                                            
-                                    )
-                                })}
+                            return (
+                                <Resume resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/>     
+                            )
+                        })}
                     </Carousel>
+                </div>
             </div>
+            <Footer/>
         </div>
     )
 }

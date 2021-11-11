@@ -31,7 +31,7 @@
 .navbar_menutogglebtn .MuiToggleButton-root {
   border: 0px;
 }
-.footer {
+/* .footer {
   position: absolute;
   width: 371px;
   height: 55px;
@@ -39,6 +39,7 @@
   top: 660px;
 
   background: #aedef1;
+  background-color: red;
   border-radius: 30px;
 }
 .footer_homebtn {
@@ -57,4 +58,4 @@
   font-family: Roboto;
   cursor: pointer;
   color: #698089;
-}
+} */

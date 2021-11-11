@@ -7,15 +7,18 @@ import { Link } from "react-router-dom";
 
 import "./navbar.css";
 
-function Navbar() {
-  const [display, setDisplay] = React.useState(false);
+function Navbar({disp}) {
+  if(!disp) {
+    disp = '/profile';
+  }
+  const [display, setDisplay] = React.useState(disp);
 
   const handleChange = () => {
     setDisplay(!display);
   };
   const children = [
     <ToggleButton value="left" key="left">
-      <Link to = "/profile">
+      <Link to = {disp}>
         <img src = "/logos/cil_hamburger-menu.png" alt = "Menu"/>
       </Link>
     </ToggleButton>,
