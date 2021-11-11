@@ -28,6 +28,7 @@ function App() {
               <Route path = "/display" component = {SinglePage}/>
               <Route path = "/explore" component = {Explore}/>
               
+              
             </Switch>
             </Router>
         </div>

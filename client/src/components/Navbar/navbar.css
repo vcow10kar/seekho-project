@@ -1,0 +1,62 @@
+* {
+  margin: auto;
+}
+.navbar {
+  width: 280px;
+  margin: auto;
+  border-color: black;
+  /* background-color: grey; */
+}
+.navbar_inner {
+  position: absolute;
+  width: 411px;
+  height: 83px;
+  left: 0px;
+  top: 0px;
+
+  background: #d0eefa;
+  /* opacity: 0.2; */
+}
+.navbar_applogo {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 2px;
+  top: 11px;
+  opacity: 100;
+}
+.navbar_menutogglebtn {
+  position: absolute;
+
+  left: 355px;
+  top: 28px;
+
+  opacity: 20.6;
+}
+.footer {
+  position: absolute;
+  width: 371px;
+  height: 55px;
+  left: 20px;
+  top: 660px;
+
+  background: #aedef1;
+  border-radius: 30px;
+}
+.footer_homebtn {
+  position: absolute;
+  left: 8.33%;
+
+  bottom: 8.33%;
+  font-family: Roboto;
+  cursor: pointer;
+  color: #698089;
+}
+.footer_explorebtn {
+  position: absolute;
+  left: 25.33%;
+  bottom: 8.33%;
+  font-family: Roboto;
+  cursor: pointer;
+  color: #698089;
+}
