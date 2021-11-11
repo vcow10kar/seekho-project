@@ -9,7 +9,11 @@
 }
 
 .carouselParent {
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+.carouselParent .rec.rec-slider-container {
+    overflow: visible;
 }
 
 .resumeReadingCarousel {
@@ -18,6 +22,10 @@
     
 }
 
+.div {
+    width: 209px;
+    margin: 0px 15px;
+}
 .resumeReadingCarousel > * {
     border: 1px solid black;
 }

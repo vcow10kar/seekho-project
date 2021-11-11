@@ -41,7 +41,7 @@ export default function Splash() {
     }
   };
   return (
-    <div>
+    <div className = {styles.splashPage}>
       <div className={styles.splash}>
         {/* <h1>Splash Screen Carousel</h1> */}
         <Carousel

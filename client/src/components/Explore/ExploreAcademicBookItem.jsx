@@ -2,7 +2,7 @@ import styles from './explore.module.css';
 import {Link} from 'react-router-dom';
 
 const ExploreAcademicBookItem = ({data}) => {
-    console.log(data);
+
     return (
         <div className = {styles.exploreBook} >
             <div>

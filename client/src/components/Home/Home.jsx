@@ -16,24 +16,32 @@ export default function Home() {
     const [trending, setTrending] = useState([]);
     const [recommended, setRecommended] = useState([]);
     const [bookList, setBookList] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [bookListId, setBookListId] = useState("");
     const carouselRef = useRef();
 
+    const handle = (data) => {
+        setBookList(data);
+    }
+
     const getBooklist = () => {
         setBookListId(localStorage.getItem('userBookList'));
-        
+        console.log(localStorage.getItem('userBookList'));
+        setLoading(true);
         axios({
             method: "get",
             url: `http://localhost:5000/userBookList/${bookListId}`,
         })
         .then(res => {
-            setBookList(res.data.userBookList.book)
+            console.log("Get Book List!", res);
+            handle(res.data.userBookList.book);
         })
         .catch(err => {
             console.log("Error:", err);
         }) 
         
     }
+
 
     useEffect(() => {
         getBooklist();
@@ -46,7 +54,7 @@ export default function Home() {
             <div className = {styles.mainContent}>
                 <RecomCard/>
 
-                {bookList ? 
+                {bookList.length > 0 ? 
                     <div>
                         <div className = {styles.exploreCategoriesDiv}>
                             <p className = {styles.resumeReadingTitle}>Resume Reading</p>
@@ -65,7 +73,7 @@ export default function Home() {
                             >
                                 {bookList.map(item => {
                                     return (
-                                        <Resume resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/>     
+                                        <Resume className = {styles.div} key = {item._id} resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/>     
                                     )
                                 })}
                             </Carousel>

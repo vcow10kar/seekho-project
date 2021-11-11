@@ -16,6 +16,10 @@ function Navbar({disp}) {
   const handleChange = () => {
     setDisplay(!display);
   };
+
+  const handleClick = () => {
+    window.location.pathname = '/home';
+  }
   const children = [
     <ToggleButton value="left" key="left">
       <Link to = {disp}>
@@ -32,7 +36,7 @@ function Navbar({disp}) {
     <div>
       {/* <h1>Navbar</h1> */}
       <Box className="navbar">
-        <Box className="navbar_inner">
+        <Box onClick = {handleClick} className="navbar_inner">
           <img
             className="navbar_applogo"
             src="/assets/SeekhoMainLogo.png"
