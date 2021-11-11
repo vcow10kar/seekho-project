@@ -34,4 +34,15 @@ router.delete('/:id', async (req, res) => {
     res.status(200).send({ deleteBook });
 })
 
+
+//Get Books by Subjects
+
+router.get("/subject/:id", async(req, res) => {
+    let books = await AcademicBook.find({
+        subject_id: { $eq: req.params.id },
+      }).lean().exec();
+
+    res.status(200).send({books});
+})
+
 module.exports = router;

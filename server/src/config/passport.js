@@ -73,10 +73,10 @@ passport.use(
       callbackURL: "http://localhost:5000/auth/facebook/callback",
       profileFields: ["id", "displayName", "name", "gender", "email"],
     },
-    async function (accessToken, refreshToken, profile, done) {
+  async   function (accessToken, refreshToken, profile, done) {
       const name = profile?._json?.name;
       console.log(name);
-
+      //  return done(null, profile);
       let user;
       let userBookList;
       let readingList;
@@ -117,5 +117,4 @@ passport.use(
     }
   )
 );
-
 module.exports = passport;

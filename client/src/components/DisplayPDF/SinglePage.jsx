@@ -5,7 +5,7 @@ const samplePDF = "/sample.pdf"
 
 console.log(samplePDF);
 
-export default function SinglePage() {
+function SinglePage() {
   const [numPages, setNumPages] = useState(null);
   const [pdf, setPdf] = React.useState(samplePDF);
   const [pageNumber, setPageNumber] = useState(1); //setting 1 to show fisrt page
@@ -30,7 +30,7 @@ export default function SinglePage() {
   return (
     <>
       <Document
-        file={pdf}
+        file={"/sample.pdf"}
         options={{ workerSrc: "/pdf.worker.js" }}
         onLoadSuccess={onDocumentLoadSuccess}
       >
@@ -54,3 +54,6 @@ export default function SinglePage() {
     </>
   );
 }
+
+
+export default SinglePage;

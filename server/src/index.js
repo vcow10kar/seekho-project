@@ -1,6 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
+const GridFsStorage = require("multer-gridfs-storage");
+const Grid = require("gridfs-stream");
+const methodOverride = require("method-override");
+const mongoose = require("mongoose");
 
 const passport = require("./config/passport");
 
@@ -19,6 +23,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+// app.use(methodOverride("_method"));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -128,15 +134,15 @@ app.get(
     scope: ["email", "profile"],
   })
 );
-/*---------FAcebook end ------*/
-app.get("/auth/facebook", passport.authenticate("facebook",{scope:'name'}));
+/*---------FAcebook start ------*/
+app.get("/auth/facebook", passport.authenticate("facebook", { scope: "name" }));
 
 app.get(
   "/auth/facebook/callback",
   passport.authenticate("facebook", { failureRedirect: "http://localhost:3000/signIn" }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://localhost:3000/home');
+    res.redirect("http://localhost:3000/home");
   }
 );
 /*------facebook end-------- */

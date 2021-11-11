@@ -2,7 +2,7 @@ import "./profile.css";
 import vector9 from "./vector9.png";
 import { ProfileDiv } from "./profile_div";
 
-export const Profile = () => {
+export default function Profile() {
   return (
     <div>
       <div id="section1">
@@ -49,3 +49,4 @@ export const Profile = () => {
     </div>
   );
 };
+
