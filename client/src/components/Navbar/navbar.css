@@ -1,37 +1,35 @@
-* {
-  margin: auto;
-}
 .navbar {
-  width: 280px;
-  margin: auto;
-  border-color: black;
-  /* background-color: grey; */
-}
-.navbar_inner {
-  position: absolute;
   width: 411px;
   height: 83px;
-  left: 0px;
-  top: 0px;
-
-  background: #d0eefa;
-  /* opacity: 0.2; */
+  margin: auto;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
 }
+.navbar_inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background:rgba(209, 238, 250, 0.2);
+  display: grid;
+  grid-template-columns: 85% 15%;
+}
+
 .navbar_applogo {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  left: 2px;
-  top: 11px;
-  opacity: 100;
+  width: 120px;
+  height: 72px;
 }
 .navbar_menutogglebtn {
-  position: absolute;
-
-  left: 355px;
-  top: 28px;
-
+  margin: auto;
   opacity: 20.6;
+}
+
+.navbar_menutogglebtn > * {
+  margin: auto;
+}
+
+.navbar_menutogglebtn .MuiToggleButton-root {
+  border: 0px;
 }
 .footer {
   position: absolute;

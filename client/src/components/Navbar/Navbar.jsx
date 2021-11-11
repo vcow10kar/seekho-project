@@ -1,35 +1,38 @@
 import React from "react";
 import { Box } from "@mui/material";
 import ToggleButton from "@mui/material/ToggleButton";
-import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
+// import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { Link } from "react-router-dom";
 
 import "./navbar.css";
 
 function Navbar() {
-  const [alignment, setAlignment] = React.useState("left");
+  const [display, setDisplay] = React.useState(false);
 
-  const handleChange = (event, newAlignment) => {
-    setAlignment(newAlignment);
+  const handleChange = () => {
+    setDisplay(!display);
   };
   const children = [
     <ToggleButton value="left" key="left">
-      <FormatAlignLeftIcon />
+      <Link to = "/profile">
+        <img src = "/logos/cil_hamburger-menu.png" alt = "Menu"/>
+      </Link>
     </ToggleButton>,
   ];
   const control = {
-    value: alignment,
+    value: display,
     onChange: handleChange,
-    exclusive: true,
+    exclusive: false,
   };
   return (
     <div>
-      <h1>Navbar</h1>
+      {/* <h1>Navbar</h1> */}
       <Box className="navbar">
         <Box className="navbar_inner">
           <img
             className="navbar_applogo"
-            src="/logos/Group26.png"
+            src="/assets/SeekhoMainLogo.png"
             alt="seekho"
           />
           <ToggleButtonGroup
@@ -44,4 +47,4 @@ function Navbar() {
     </div>
   );
 }
-export { Navbar };
+export default Navbar;

@@ -7,6 +7,8 @@
 .exploreCarousel {
     width: 411px;
     height: 216px;
+    position: relative;
+    top: 83px;
     margin: 0px;
     padding: 0px;
 }
@@ -27,7 +29,8 @@
 .exploreCarouselButton {
     width: 411px;
     margin: auto;
-    position: absolute;
+    position: relative;
+
     /* top: 234px;
     left: 627px; */
 }

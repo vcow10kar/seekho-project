@@ -5,7 +5,7 @@ import ExploreBooks from "./ExploreBooks";
 import ExploreAcademicBooks from './ExploreAcademicBooks';
 import { useState, useEffect } from "react";
 import axios from 'axios';
-
+import NavBar from "../Navbar/Navbar";
 
 export default function Explore() {
     const [categories, setCategories] = useState([]);
@@ -45,7 +45,7 @@ export default function Explore() {
     }, []);
     return (
         <div className = {styles.explorePage}>
-            <p>EXPLORE PAGE!</p>
+            <NavBar/>
             <ExploreCarousel/>
             <ExploreBooks categories = {categories}/>
             <hr/>

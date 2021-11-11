@@ -9,6 +9,8 @@ import "./home.module.css";
 import styles from  "./home.module.css";
 import Carousel from "react-elastic-carousel";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import NavBar from "../Navbar/Navbar";
+
 export default function Home() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
     const [trending, setTrending] = useState([]);
@@ -44,7 +46,7 @@ export default function Home() {
 
     return (
         <div>
-            <p>This is the home page!!!!</p>
+            <NavBar/>
             <RecomCard/>
 
             <div className = {styles.exploreCategoriesDiv}>
