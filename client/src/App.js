@@ -23,6 +23,7 @@ function App() {
               <Route path = "/books/:id" component = {Books} />
               <Route path = "/explore" component = {Explore}/>
               
+              
             </Switch>
             </Router>
         </div>
