@@ -10,6 +10,8 @@ import SinglePage from "./components/DisplayPDF/SinglePage";
 import Profile from "./components/profile/profile";
 import EmbedPDF from "./components/DisplayPDF/EmbedPDF";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import { Footer } from "./components/Footer/Footer";
 
 function App() {
   return (

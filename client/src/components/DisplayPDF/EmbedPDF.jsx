@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import NavBar from "../Navbar/Navbar";
+import { Footer } from '../Footer/Footer';
+import styles from './embedPDF.module.css';
 
 function EmbedPDF() {
     const obj = useParams();
@@ -27,7 +30,11 @@ function EmbedPDF() {
     }, []);
 
     return (
-        <iframe src = {book.pdf_file_url ? book.pdf_file_url : "https://drive.google.com/file/d/1ZwgUkCbVXdia-iwq8jHa-B3Zldb7cZw7/preview"} border = "0" width="400" height="510" allow="autoplay"></iframe>
+        <div className = {styles.embedPDFPage}>
+            <NavBar disp = {"/profile"}/>
+            <iframe className = {styles.pdf} src = {book.pdf_file_url ? book.pdf_file_url : "https://drive.google.com/file/d/1ZwgUkCbVXdia-iwq8jHa-B3Zldb7cZw7/preview"} border = "0" width="400" height="510" allow="autoplay"></iframe>
+            <Footer/>   
+        </div>
     )
 }
 

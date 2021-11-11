@@ -6,6 +6,8 @@ import ReadingListLinks from './ReadingListLinks';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {Link} from "react-router-dom";
 import axios from 'axios';
+import NavBar from "../Navbar/Navbar";
+import { Footer } from '../Footer/Footer';
 
 function MyBooks() {
     const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -91,39 +93,53 @@ function MyBooks() {
     //     }
     // ]
     return (
-            
-            <div className = {styles.myBooksPage}>
-                <h2 className = {styles.continue}>Continue where you left...</h2>
-                <Carousel
-                    ref={carouselRef}
-                    itemsToShow={3}
-                    showArrows={false}
-                    pagination={false}
-                    onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
-                >
-                    {items.map(item => {
-                                return (
-                                    
-                                    <MyBooksIndividual data = {item} key = {item.id}/>  
-                                         
-                                )
-                            })}
-                </Carousel>
+            <div>
+                <NavBar disp = {"/profile"}/>
 
-                <div className = {styles.booksNavigationLinks}>
-                    <a href = "/myBooks" className = {styles.allBooks}>
-                        <p>All books</p>
-                        <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
-                    </a>
+                <div className = {styles.myBooksPage}>
+
+                    {items ? 
+                        <div>
+                            <h2 className = {styles.continue}>Continue where you left...</h2>
+                            <Carousel
+                                ref={carouselRef}
+                                itemsToShow={3}
+                                showArrows={false}
+                                pagination={false}
+                                onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
+                            >
+                                {items.map(item => {
+                                            return (
+                                                
+                                                <MyBooksIndividual data = {item} key = {item.id}/>  
+                                                    
+                                            )
+                                        })}
+                            </Carousel>
+
+                            <div className = {styles.booksNavigationLinks}>
+                                <a href = "/myBooks" className = {styles.allBooks}>
+                                    <p>All books</p>
+                                    <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
+                                </a>
+                            </div>
+                        </div>
+
+                        :
+                        null
+                    }
+
+
+                    <div>
+                        {links.map(item => {
+                            return <ReadingListLinks link = {item}/>
+                        })}
+                    </div>
+
                 </div>
-
-                <div>
-                    {links.map(item => {
-                        return <ReadingListLinks link = {item}/>
-                    })}
-                </div>
-
+                <Footer/>
             </div>
+            
     )
 }
 

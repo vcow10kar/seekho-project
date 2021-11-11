@@ -1,6 +1,7 @@
 .resume-parent{
     display: flex;
     gap: 10px;
+    border: 1px solid black;
 }
 
 

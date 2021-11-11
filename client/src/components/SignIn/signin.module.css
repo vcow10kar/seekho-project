@@ -1,3 +1,8 @@
+.signInPage {
+    height: 860px;
+    background-color: white;
+}
+
 .signInPageHeader {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;

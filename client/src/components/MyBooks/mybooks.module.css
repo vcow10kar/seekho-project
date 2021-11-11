@@ -1,7 +1,9 @@
 .myBooksPage {
-    margin: 14px;
+    margin: 0px;
+    padding-top: 83px;
     width: 411px;
     text-align: left;
+    height: 860px
 }
 
 .continue {

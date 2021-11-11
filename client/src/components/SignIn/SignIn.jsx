@@ -53,68 +53,71 @@ export default function SignIn() {
     }
 
     return (
-        <Box component = "form" onSubmit = {handleClick} className = {styles.signin} autoComplete="off">
-            <img src = "/logos/Group_22.png" alt = "seekho" style = {{margin: 'auto', marginBottom: '0px'}}/>
+        <div className = {styles.signInPage}>
+            <Box component = "form" onSubmit = {handleClick} className = {styles.signin} autoComplete="off">
+                <img src = "/logos/Group_22.png" alt = "seekho" style = {{margin: 'auto', marginBottom: '0px'}}/>
 
-            <p className = {styles.signInPageHeader}>SIGN IN</p>
+                <p className = {styles.signInPageHeader}>SIGN IN</p>
 
+                
+                <FormText
+                    margin = "normal"
+                    id = "email"
+                    //label = "Email Address"
+                    name = "email"
+                    type = "email"
+                    id="outlined-disabled"
+                    placeholder = "Email Address"
+                    variant="standard"
+                    InputProps={{
+                            disableUnderline: true,
+                    }}
+                    fullWidth autoFocus required
+                />
+
+        
+                {emailError ? <AlertWrapper severity="error">{emailError}</AlertWrapper> : null}
+
+
+                <FormText
+                    margin = "normal"
+                    id = "password"
+                    //label = "Password"
+                    name = "password"
+                    variant="standard"
+                    InputProps={{
+                            disableUnderline: true,
+                    }}
+                    placeholder = "Password"
+                    // helperText = "Password should have 8-20 alphanumeric characters & a special character"
+                    sx={{mb: 2, borderColor: '#00000'}}
+                    type="password"
+                    id="outlined-disabled"
+                    fullWidth autoFocus required
+                /> 
+                <PasswordMsg>Password should have 8-20 alphanumeric characters & a special character</PasswordMsg>
+
+                {passwordError ? <AlertWrapper severity="error">{passwordError}</AlertWrapper> : null}
+
+
+                <SignInButton
+                type="submit"
+                fullWidth
+                disableElevation
+                variant="contained"
+                sx={{ mt: 3, mb: 2, pt:2, pb:2}}
+                >
+                SIGN IN
+                </SignInButton  >
+
+                <LinkWrapper>
+                    <Link href="/signUp" underline="hover" sx = {{color: 'black', fontSize: '14px'}}>Don’t have an account? <span className = {styles.bold}> Sign up </span></Link>
+                </LinkWrapper>
+
+                <GoogleSignIn/>
             
-            <FormText
-                margin = "normal"
-                id = "email"
-                //label = "Email Address"
-                name = "email"
-                type = "email"
-                id="outlined-disabled"
-                placeholder = "Email Address"
-                variant="standard"
-                InputProps={{
-                        disableUnderline: true,
-                }}
-                fullWidth autoFocus required
-            />
-
-    
-            {emailError ? <AlertWrapper severity="error">{emailError}</AlertWrapper> : null}
-
-
-            <FormText
-                margin = "normal"
-                id = "password"
-                //label = "Password"
-                name = "password"
-                variant="standard"
-                InputProps={{
-                        disableUnderline: true,
-                }}
-                placeholder = "Password"
-                // helperText = "Password should have 8-20 alphanumeric characters & a special character"
-                sx={{mb: 2, borderColor: '#00000'}}
-                type="password"
-                id="outlined-disabled"
-                fullWidth autoFocus required
-            /> 
-            <PasswordMsg>Password should have 8-20 alphanumeric characters & a special character</PasswordMsg>
-
-            {passwordError ? <AlertWrapper severity="error">{passwordError}</AlertWrapper> : null}
-
-
-            <SignInButton
-              type="submit"
-              fullWidth
-              disableElevation
-              variant="contained"
-              sx={{ mt: 3, mb: 2, pt:2, pb:2}}
-            >
-              SIGN IN
-            </SignInButton  >
-
-            <LinkWrapper>
-                <Link href="/signUp" underline="hover" sx = {{color: 'black', fontSize: '14px'}}>Don’t have an account? <span className = {styles.bold}> Sign up </span></Link>
-            </LinkWrapper>
-
-            <GoogleSignIn/>
-            
-        </Box>
+            </Box>
+        </div>
+        
     )
 }
