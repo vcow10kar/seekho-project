@@ -1,0 +1,43 @@
+.footer {
+  position: absolute;
+  width: 371px;
+  height: 55px;
+  left: 20px;
+  top: 660px;
+
+  background: #aedef1;
+  border-radius: 30px;
+}
+.footer_homebtn {
+  position: absolute;
+  left: 15%;
+
+  bottom: 8.33%;
+  font-family: Roboto;
+  cursor: pointer;
+  color: #698089;
+}
+.footer_explorebtn {
+  position: absolute;
+  left: 30%;
+  bottom: 8.33%;
+  font-family: Roboto;
+  cursor: pointer;
+  color: #698089;
+}
+.footer_booksbtn {
+  position: absolute;
+  left: 49%;
+  bottom: 8.33%;
+  font-family: Roboto;
+  cursor: pointer;
+  color: #698089;
+}
+.footer_profilebtn {
+  position: absolute;
+  left: 72%;
+  bottom: 8.33%;
+  font-family: Roboto;
+  cursor: pointer;
+  color: #698089;
+}
