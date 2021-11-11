@@ -23,7 +23,7 @@ function App() {
               <Route path = "/signIn" component = {SignIn}/>
               <Route path = "/home" component = {Home}/>
               <Route path = "/books/:id" component = {Books} />
-              <Route path = "/displayBook" component = {EmbedPDF}/>
+              <Route path = "/displayBook/:id" component = {EmbedPDF}/>
               <Route path = "/profile" component = {Profile}/>
               <Route path = "/display" component = {SinglePage}/>
               <Route path = "/explore" component = {Explore}/>
