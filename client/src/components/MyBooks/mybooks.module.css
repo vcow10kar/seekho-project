@@ -22,6 +22,12 @@
 
 .book > a {
     text-decoration: none;
+    color: inherit;
+}
+
+.book > a:visited, a:link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .book > div:nth-child(1) {
@@ -45,6 +51,12 @@
     margin-top: 0px;
     padding: 0px;
     margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
 }
 
 .bookAuthor {
@@ -52,7 +64,7 @@
     line-height: 10.55px;
     font-weight: 400;
     text-align: left;
-    margin-top: 0px;
+    margin-top: 2px;
     padding: 0px;
     opacity: 0.7;
 }

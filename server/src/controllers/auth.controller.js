@@ -38,7 +38,7 @@ const signup = async(req, res) => {
 
         const token = newToken(user);
 
-        return res.status(200).send({token: token, userBookList: userBookList['_id'], readingList: readingList['_id']});
+        return res.status(200).send({userid: user._id, token: token, userBookList: userBookList['_id'], readingList: readingList['_id']});
     } catch(err) {
         console.log(err);
         res.status(200).send({message: "Something went wrong! Sorry for inconvinience!"});
@@ -75,7 +75,7 @@ const signin = async (req, res) => {
 
         const token = newToken(user);
 
-        return res.status(200).send({token: token, userBookList: userBookList._id, readingList: readingList._id});
+        return res.status(200).send({userid: user._id, token: token, userBookList: userBookList._id, readingList: readingList._id});
 
         
     } catch(err) {

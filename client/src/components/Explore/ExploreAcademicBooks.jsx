@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import styles from './explore.module.css';
-import ExploreBookCategory from "./ExploreBookCategory";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import ExploreSubjectBooks from "./ExploreSubjectBooks";
 
-const ExploreBooks = ({categories}) => {
+const ExploreAcademicBooks = ({subjects}) => {
 
     return (
         <div>
-            {categories.map(item => {
+            {subjects.map(item => {
                return (
                 <div key = {item.id}>
                     <div className = {styles.exploreCategoriesDiv}>
-                        <p className = {styles.bookCategory}>Best Selling in {item.category_name}</p>
+                        <p className = {styles.bookCategory}>Academic Books for {item.subject_name}</p>
                         <SwapHorizIcon/>
                     </div>
-                    <ExploreBookCategory category = {item._id}/>
+                    <ExploreSubjectBooks subject = {item._id}/>
                 </div>
                )
             })}
@@ -23,4 +23,4 @@ const ExploreBooks = ({categories}) => {
     )
 }
 
-export default ExploreBooks;
+export default ExploreAcademicBooks;

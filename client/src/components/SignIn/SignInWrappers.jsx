@@ -2,29 +2,31 @@ import styled from 'styled-components';
 import { TextField, Button, Box, Alert } from "@mui/material";
 
 const SignInButton = styled(Button)({
-    backgroundColor: 'black',
-    width: '280px',
-    height: '54px',
-    fontWeight: 500,
-    fontsize: '14px',
-    lineHeight: '20px',
-    '&:hover': {
-        backgroundColor: 'grey'
-    },
+  backgroundColor: "#333333",
+  width: "280px",
+  height: "54px",
+  fontWeight: 500,
+  fontsize: "14px",
+  lineHeight: "20px",
+  "&:hover": {
+    backgroundColor: "grey",
+  },
 
-    '&.MuiButton-root': {
-        borderRadius: ' 12px'
-    }, 
-})
+  "&.MuiButton-root": {
+    borderRadius: " 12px",
+  },
+});
 
 const FormText = styled(TextField)({
     width: '280px',
     height: '54px',
     backgroundColor: '#dcddde',
     borderColor: '#dcddde',
-    margin: '20px auto',
+    margin: '0px auto',
     paddingLeft: '20px',
     paddingTop: '13px',
+    marginBottom: '24px',
+    paddingBottom: '15px',
 
     '&.MuiTextField-root' : {
         border: '0px solid black',
@@ -80,4 +82,13 @@ const GoogleButton = styled(Button)({
     }
 })
 
-export {SignInButton, FormText, LinkWrapper, AlertWrapper, GoogleButton}
+const PasswordMsg = styled.p`
+    font-size: 12px;
+    color: black;
+    opacity: 0.7;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+`
+
+export {SignInButton, FormText, LinkWrapper, AlertWrapper, GoogleButton, PasswordMsg}

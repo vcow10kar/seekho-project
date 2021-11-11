@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from './books.module.css';
 import axios from 'axios';
 
-export default function Books() {
+export default function AcademicBooks() {
     const [book, setBook] = useState({});
     const {id}  = useParams();
     const getBook = () => {

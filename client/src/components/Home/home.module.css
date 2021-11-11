@@ -1,0 +1,48 @@
+.carouselParent {
+    overflow-x: hidden;
+}
+
+.resumeReadingCarousel {
+    text-align: left;
+    width: 100%;
+    
+}
+
+.resumeReadingCarousel > * {
+    border: 1px solid black;
+}
+
+.resumeReadingCarousel > .rec.rec-slider-container {
+    overflow: visible;
+}
+
+.resumeReadingCarousel > .rec.rec-carousel-item {
+    width: 209px
+}
+
+.resumeReadingTitle {
+    font-size:  20px;
+    font-weight: 900;
+    line-height: 23.44px;
+    text-align: left;
+    color: black;
+    opacity: 0.8;
+    padding: 0px;
+}
+
+.exploreCategoriesDiv {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100%;
+    margin: auto;
+}
+
+
+.exploreCategoriesDiv > svg {
+    text-align: right;
+    margin: auto;
+    color: #13ABE6;
+    height: 28px;
+    width: 28px;
+}
+

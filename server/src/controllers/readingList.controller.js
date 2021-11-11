@@ -21,23 +21,36 @@ router.get("/", async (req, res) => {
 // Getting a reading_list by id
 
 router.get("/:id", async (req, res) => {
-  let readingList = await ReadingList.findById(req.params.id).lean().exec();
+  let readingList = await ReadingList.findById(req.params.id)
+  .populate('user')
+  .populate({path: 'book'})
+  .populate({path: 'academic'})
+  .lean().exec();
+
+  console.log(readingList);
   res.status(200).send({ readingList });
 });
 
 // Updating a reading_list by id
 
-// router.patch("/:id", async (req, res) => {
-//   let readingList = await ReadingList.findByIdAndUpdate(
-//     req.params.id,
-//     req.body,
-//     {
-//       new: true,
-//     }
-//   );
+router.patch("/:id/books", async (req, res) => {
 
-//   res.status(200).send({ readingList });
-// });
+  let readingList;
+  readingList = await ReadingList.findById(req.params.id);
+  readingList = await ReadingList.count({_id: req.params.id, book: {$in: [req.body.book]}});
+
+  if(readingList === 0) {
+    readingList = await ReadingList.findByIdAndUpdate(
+      req.params.id,
+      {$push: {book: req.body.book}}
+    ).exec();
+
+    res.status(200).send({ readingList });
+  } else {
+    console.log("Book present");
+    res.status(400).send({message: "Book already in Reading List"});
+  }
+});
 
 // Deleting a reading_list by id
 
