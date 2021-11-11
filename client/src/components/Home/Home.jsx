@@ -13,11 +13,18 @@ import { Footer } from '../Footer/Footer';
 
 export default function Home() {
     const [bookList, setBookList] = useState([]);
+    const [readingList, setReadingList] = useState([]);
     const [bookListId, setBookListId] = useState(localStorage.getItem('userBookList'));
+    const [readListId, setReadListId] = useState(localStorage.getItem('readingList'));
+    // cont [books, set]
     const carouselRef = useRef();
 
     const handle = (data) => {
         setBookList(data);
+    }
+
+    const getBooks = () => {
+
     }
 
     const getBooklist = () => {
@@ -35,10 +42,26 @@ export default function Home() {
         
     }
 
+    const getReadlist = () => {
+        axios({
+            method: "get",
+            url: `http://localhost:5000/readingList/${readListId}`,
+        })
+        .then(res => {
+            let data = res.data.readingList.book;
+            setReadingList(data);
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        }) 
+        
+    }
+
 
     useEffect(() => {
         getBooklist();
-    }, []);
+        getReadlist();
+    }, [bookListId, readListId]);
 
     return (
         <div className = {styles.homePage}>

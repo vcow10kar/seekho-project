@@ -56,6 +56,8 @@ passport.use(
           userBookList: userBookList._id,
           readingList: readingList._id,
         };
+
+        console.log(user);
         return done(null, user);
       } catch (err) {
         console.log("error:", err);

@@ -8,10 +8,16 @@ font-family: Roboto;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
-line-height: 19px;
+line-height: 18.57px;
 letter-spacing: 0em;
 text-align: left;
 margin: auto;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 1; /* number of lines to show */
+        line-clamp: 1; 
+-webkit-box-orient: vertical;
 
 }
 .vector0 {
@@ -54,10 +60,12 @@ border-radius: 0px;
     display: flex;
     gap: 20px;
     height: 54px;
-width: 411px;
-left: 0px;
-top: 0px;
-border-radius: 0px;
-margin: auto;
+    width: 411px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    margin: auto;
+    padding-left: 6px;
+    padding-right: 2px;
 /* background-color: #c4c4c4; */
 }

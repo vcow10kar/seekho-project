@@ -51,7 +51,8 @@ function MyBooks() {
                 url: `http://localhost:5000/userBookList/${bookListId}`,
             })
             .then(res => {
-                setItems(res.data.userBookList.book)
+                setItems(res.data.userBookList.book);
+                setBookList(res.data.userBookList.book)
             })
             .catch(err => {
                 console.log("Error:", err);
@@ -59,30 +60,21 @@ function MyBooks() {
         }
     }
 
-    useEffect(() => {
-        //getBooklist();
-        let userBookList = localStorage.getItem('userBookList');
+    const getReadList = () => {
         let readingList = localStorage.getItem('readingList');
 
-        // console.log(userBookList, readingList);
+        axios.get(`http://localhost:5000/readingList/${readingList}`)
+        .then(res => {
+            setReadList(res.data.readingList);
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        })
+    }
 
-        if(userBookList && readingList) {
-            axios.get(`http://localhost:5000/userBookList/${userBookList}`)
-            .then(res => {
-                setBookList(res.data.userBookList);
-            })
-            .catch(err => {
-                console.log("Error:", err);
-            })
-
-            axios.get(`http://localhost:5000/readingList/${readingList}`)
-            .then(res => {
-                setReadList(res.data.readingList);
-            })
-            .catch(err => {
-                console.log("Error:", err);
-            })
-        }
+    useEffect(() => {
+        getBooklist();
+        getReadList();
     }, []);
 
     // const items = [

@@ -31,7 +31,11 @@ export default function GoogleSignIn() {
                     readingList: res.data.readingList
                 }
 
-                timer = null;
+                if(res.data.token === undefined && res.data.userBookList === undefined && res.data.readingList === undefined ) {
+                    goToGoogle();
+                }
+
+                //timer = null;
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
@@ -44,14 +48,17 @@ export default function GoogleSignIn() {
             })
 
         }
+
+        if(newWindow) {
+            timer = setInterval(() => {
+                fetchUser();
+                console.log('Authenticated!');
+                if(timer) {
+                    clearInterval(timer);
+                }
+            }, 500);
+        }
         
-        timer = setInterval(() => {
-            fetchUser();
-            console.log('Authenticated!');
-            if(timer) {
-                clearInterval(timer);
-            }
-        }, 500);
         
     }
     return (
