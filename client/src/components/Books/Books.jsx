@@ -2,11 +2,17 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styles from './books.module.css';
 import axios from 'axios';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Books() {
     const [book, setBook] = useState({});
     const [message, setMessage] = useState("Add to Readlist");
     const {id}  = useParams();
+
+    const closeWindow = () => {
+        window.location.pathname = "/home";
+    }
+
     const getBook = () => {
         axios({
             method: "get",
@@ -92,6 +98,9 @@ export default function Books() {
     }, []);
     return (
         <div className = {styles.bookCoverPage}>
+            <div onClick = {closeWindow} className = {styles.closeIcon}>
+                <CloseIcon sx={{ fontSize: 40 }}/>
+            </div>
             <img src = {book.coverImageUrl} alt = {book.title}/>
 
             <div className = {styles.readDiv}>

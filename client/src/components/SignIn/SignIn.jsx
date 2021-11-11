@@ -38,8 +38,6 @@ export default function SignIn() {
             } else {
                 setEmailError(null);
                 setPasswordError(null);
-
-                console.log(res.data);
                 localStorage.setItem('token', res.data.token);
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);

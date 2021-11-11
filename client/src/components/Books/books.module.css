@@ -19,6 +19,18 @@
     border: 0px;
 }
 
+.bookCoverPage > .closeIcon {
+    top: 120px;
+    position: relative;
+    margin-left: 290px;
+    font-size: 0px;
+    color: white;
+}
+
+.bookCoverPage > .closeIcon:hover {
+    cursor: pointer;
+}
+
 .readDiv {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -43,4 +55,8 @@
     top: 180px;
     position: relative;
     left: 36px;
+}
+
+.readList, .readNow:hover {
+    cursor: pointer;
 }
