@@ -27,7 +27,6 @@ router.get("/:id", async (req, res) => {
   .populate({path: 'academic'})
   .lean().exec();
 
-  console.log(userBookList);
   res.status(200).send({ userBookList });
 });
 

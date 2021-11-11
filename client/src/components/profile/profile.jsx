@@ -8,6 +8,15 @@ import axios from "axios";
 export default function Profile({disp}) {
   const [email, setEmail] = useState(null);
 
+  const handleLogOut = () => {
+    console.log("Hello");
+    localStorage.setItem('token', "");
+    localStorage.setItem('userBookList', "");
+    localStorage.setItem('readingList', "");
+    localStorage.setItem('userId', "");
+    window.location.pathname = "/";
+  }
+
   useEffect(() => {
     const userId = localStorage.getItem('userId');
     console.log(userId);
@@ -59,7 +68,10 @@ export default function Profile({disp}) {
           <hr />
           <ProfileDiv name="Contact Us" />
           <hr />
-          <ProfileDiv name="Log Out" />
+          <div onClick = {handleLogOut}>
+            <ProfileDiv name="Log Out" />
+          </div>
+          
         </div>
         <br/>
         <br/>

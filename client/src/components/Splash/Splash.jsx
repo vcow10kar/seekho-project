@@ -36,7 +36,7 @@ export default function Splash() {
     if(localStorage.getItem('userId')) {
       window.location.pathname = '/explore';
     } else {
-      window.location.pathname = '/signIn';
+      window.location.pathname = '/signUp';
     }
   }
 
