@@ -9,7 +9,7 @@ function ExploreCarouselItem({imageUrl, title, color}) {
     return (
         <div>
             <img className = {styles.exploreCarouselImage} src = {imageUrl} alt = "images"/>
-            <p className = {styles.centered}>{title}</p>
+            {/* <p className = {styles.centered}>{title}</p> */}
         </div>
     )
 }

@@ -53,8 +53,11 @@ function ExploreCarousel() {
                             return (
                                 <ExploreCarouselItem key = {item.id} imageUrl = {item.imageUrl} color = {item.color} title = {item.title}/>
                             )
-                        })}
-            <div className = {styles.exploreCarouselButton} style={{ display: "flex", justifyContent: "center" }}>
+                })}
+            
+            </Carousel>
+
+            <div className = {styles.exploreCarouselButton} style = {{display: "flex", justifyContent: 'center'} }>
                 {items.map((_, i) => (
                     <div>
                         <Button
@@ -65,10 +68,7 @@ function ExploreCarousel() {
                     </div>
                 ))}
             </div>
-            </Carousel>
-
             
-
         </div>
     )
 }

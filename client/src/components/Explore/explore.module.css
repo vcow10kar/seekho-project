@@ -1,16 +1,14 @@
 .explorePage {
     width: 411px;
     margin: 0px;
-    padding: 0px;
 }
 
 .exploreCarousel {
     width: 411px;
     height: 216px;
-    position: relative;
-    top: 83px;
-    margin: 0px;
     padding: 0px;
+    padding-top: 83px;
+    margin: 0px;
 }
 
 .exploreCarousel .rec-carousel-item {
@@ -32,15 +30,18 @@
 }
 
 .exploreCarouselButton {
+    position: relative;
+    top: -30px;
     width: 411px;
     margin: auto;
-    top: 203px;
+    /* padding-top: px; */
     z-index: 2;
 }
 
 .exploreCarouselImage {
     width: 411px;
     height: 216px;
+    opacity: 0.8;
 }
 
 .exploreCarousel .rec-slider-container {
