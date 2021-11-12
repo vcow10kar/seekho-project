@@ -11,6 +11,7 @@ import Profile from "./components/Profile/Profile";
 import EmbedPDF from "./components/DisplayPDF/EmbedPDF";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SeekhoLogo from "./components/InitialPages/SeekhoLogo";
+import ListPages from "./components/ListPages/ListPages";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/display" component={SinglePage} />
           <Route path="/explore" component={Explore} />
+          <Route path = "/listPages" component = {ListPages}/>
         </Switch>
       </Router>
     </div>

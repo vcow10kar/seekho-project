@@ -112,7 +112,7 @@ function MyBooks() {
                 <div className = {styles.myBooksPage}>
 
                     {items ? 
-                        <div>
+                        <div className = {styles.carouselDiv}>
                             <h2 className = {styles.continue}>Continue where you left...</h2>
                             <Carousel
                                 ref={carouselRef}
