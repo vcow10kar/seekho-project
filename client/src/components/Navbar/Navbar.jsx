@@ -21,11 +21,11 @@ function Navbar({disp}) {
     window.location.pathname = '/home';
   }
   const children = [
-    <ToggleButton value="left" key="left">
+    <div>
       <Link to = {disp}>
-        <img src = "/logos/cil_hamburger-menu.png" alt = "Menu"/>
+        <img className = {styles.menuButton} src = "/logos/cil_hamburger-menu.png" alt = "Menu"/>
       </Link>
-    </ToggleButton>,
+    </div>,
   ];
   const control = {
     value: display,
@@ -43,13 +43,13 @@ function Navbar({disp}) {
             alt="seekho"
             onClick = {handleClick}
           />
-          <ToggleButtonGroup
+          <div
             className= {styles.navbar_menutogglebtn}
             size="small"
             {...control}
           >
             {children}
-          </ToggleButtonGroup>
+          </div>
         </Box>
       </Box>
     </div>

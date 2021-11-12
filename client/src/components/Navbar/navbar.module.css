@@ -12,7 +12,7 @@
   height: 100%;
   background:rgba(209, 238, 250, 0.2);
   display: grid;
-  grid-template-columns: 85% 15%;
+  grid-template-columns: 82% 18%;
 }
 
 .navbar_applogo {
@@ -24,7 +24,9 @@
 .navbar_menutogglebtn {
   margin: auto;
   opacity: 20.6;
-  height: 37px;
+  height: 40px;
+  width: 40px;
+  padding-right: 12px;
 }
 
 .navbar_menutogglebtn > * {
@@ -32,7 +34,7 @@
 }
 
 .navbar_menutogglebtn .MuiToggleButton-root {
-  border: 0px;
+  border: '0px solid black',
 }
 /* .footer {
   position: absolute;
@@ -62,3 +64,20 @@
   cursor: pointer;
   color: #698089;
 } */
+
+
+.menuButton {
+  border: 0px;
+  padding-left: 6px;
+  padding-top: 6px;
+  height: 35px;
+}
+
+.navbar_menutogglebtn  img {
+  margin: auto;
+}
+
+.navbar_menutogglebtn:hover {
+  background-color: rgba(128, 128, 128, 0.185);
+  border-radius: 4px;
+}
