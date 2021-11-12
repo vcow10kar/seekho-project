@@ -3,12 +3,19 @@ h3, p, h4, h2, h1 {
   margin: 0px;
   font-family: 'Roboto', sans-serif;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 0px;
+}
+
+.hr {
+  margin: 12px 0px;
+  padding: 0px 0px;
+  width: 98%;
 }
 
 .profilePage {
   font-family: 'Roboto', sans-serif;
   padding-top: 83px;
+  height: 930px;
   text-align: left;
   z-index: 2;
 }
@@ -21,7 +28,8 @@ h3, p, h4, h2, h1 {
 .mainContent {
   width: 411px;
   padding: 0px;
-  padding-left: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
   margin: 0px;
   text-align: left;
 }
@@ -51,10 +59,10 @@ h3, p, h4, h2, h1 {
   /* border: 1px solid red; */
   display: grid;
   grid-template-columns: 20% 70% 10%;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
-.circlular-profile {
+.circlular_profile {
   width: 45px;
   height: 45px;
   border: 1px solid #c4c4c4;
@@ -81,17 +89,20 @@ h3, p, h4, h2, h1 {
 
 .text_div {
   width: 411px;
-  height: 20px;
   /* padding-left: 10px; */
-  line-height: 0;
+  line-height: 30px;
   display: grid;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.41px;
   grid-template-columns: 90% 10%;
-  padding-right: 10px;
+  padding-right: 30px;
+  color: #333333;
 }
 
 
 
-.settingName {
+.setting_name {
   font-family: 'Roboto', sans-serif;
   margin: 0px;
   /* padding-left: 10px; */
@@ -101,10 +112,13 @@ h3, p, h4, h2, h1 {
   color: #333333;
 }
 
+.you_arrow_icon {
+  margin: auto;
+}
+
 .arrow_icon {
   margin: auto;
-  /* margin-top: 10px;
-  margin-right: 10px;
+  /* margin-right: 10px;
   padding-right: 10px; */
   /* border: 2px solid orange; */
 }
@@ -119,7 +133,7 @@ h3, p, h4, h2, h1 {
 .mybooks,
 .other {
   text-align: left;
-  margin: 20px 10px 6x 10px;
+  margin-bottom: 10px;
 }
 
 

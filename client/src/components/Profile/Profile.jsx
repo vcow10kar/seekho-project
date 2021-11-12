@@ -17,6 +17,10 @@ export default function Profile({disp}) {
     window.location.pathname = "/";
   }
 
+  const next = () => {
+    window.location.pathname = "/signIn"
+  }
+
   useEffect(() => {
     const userId = localStorage.getItem('userId');
     console.log(userId);
@@ -33,15 +37,15 @@ export default function Profile({disp}) {
         <NavBar disp = {"/explore"}/>
         <div styles = {{top: '83px'}} className = {styles.profilePage}>
             <div className = {styles.mainContent}>
-              <div className = {styles.section1}>
+              <div className = {styles.section1} onClick = {email ? "/profile" : () => {next()}}>
                 <h3 className={styles.you}>YOU</h3>
                 <div className = {styles.innersection1}>
-                  <div className = {styles["circlular-profile"]}></div>
-                  <div className = {styles["user_div"]}>
-                    <p className = {styles["user_id"]}>{email}</p>
+                  <div className = {styles.circlular_profile}></div>
+                  <div className = {styles.user_div}>
+                    <p className = {styles.user_id}>{email ? email : "Sign In"}</p>
                   </div>
-                  <div className = {styles["arrow-icon"]}>
-                    <img className="arrow_icon" src={vector9} alt="vector9.png" />
+                  <div className = {styles.you_arrow_icon}>
+                    <img className={styles.arrow_icon} src={vector9} alt="vector9.png" />
                   </div>
                 </div>
               </div>
@@ -49,30 +53,29 @@ export default function Profile({disp}) {
               <div style = {{textAlign: 'left'}} className = {styles.section2}>
                 <div>
                   <ProfileDiv name="Account Settings" />
-                  <hr />
+                  <hr className = {styles.hr} />
                   <ProfileDiv name="Seekho Settings" />
                 </div>
               </div>
 
               <div className={styles.mybooks}>
-                <h3 className={styles}>MY BOOKS</h3>
+                <h3 className={styles.you} style = {{marginBottom: '10px'}}>MY BOOKS</h3>
                 <ProfileDiv name="Downloaded Books" />
-                <hr />
+                <hr className = {styles.hr} />
                 <ProfileDiv name="My Readlist" />
               </div>
 
               <div className={styles.other}>
-                <h3 className={styles.you}>OTHER</h3>
+                <h3 className={styles.you} style = {{marginTop: '36px', marginBottom: '10px'}}>OTHER</h3>
                 <ProfileDiv name="Terms of Use" />
-                <hr />
+                <hr className = {styles.hr} />
                 <ProfileDiv name="Privacy Policy" />
-                <hr />
+                <hr className = {styles.hr} />
                 <ProfileDiv name="Contact Us" />
-                <hr />
+                <hr className = {styles.hr} />
                 <div onClick = {handleLogOut}>
                   <ProfileDiv name="Log Out" />
                 </div>
-                
               </div>
               <br/>
               <br/>
