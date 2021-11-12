@@ -111,7 +111,7 @@ function MyBooks() {
 
                 <div className = {styles.myBooksPage}>
 
-                    {items ? 
+                    {items.length > 0 ? 
                         <div className = {styles.carouselDiv}>
                             <h2 className = {styles.continue}>Continue where you left...</h2>
                             <Carousel
@@ -129,18 +129,18 @@ function MyBooks() {
                                             )
                                         })}
                             </Carousel>
-
-                            <div className = {styles.booksNavigationLinks}>
-                                <a href = "/myBooks" className = {styles.allBooks}>
-                                    <p>All books</p>
-                                    <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
-                                </a>
-                            </div>
                         </div>
 
                         :
                         null
                     }
+
+                    <div className = {styles.booksNavigationLinks}>
+                        <a href = "/myBooks" className = {styles.allBooks}>
+                            <p>All books</p>
+                            <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
+                        </a>
+                    </div>
 
 
                     <div>

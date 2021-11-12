@@ -36,9 +36,11 @@ function ReadingListPage() {
             >
                 {readingList.map(item => {
                             return (
-                                
-                                <IndividualBook data = {item} key = {item.id}/>  
-                                    
+                                <div>
+                                    <IndividualBook data = {item} key = {item.id}/>  
+
+                                    <div className = {[styles.buttonDiv,styles.block]}></div>
+                                </div>  
                             )
                         })}
             </div>

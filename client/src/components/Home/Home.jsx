@@ -126,37 +126,47 @@ export default function Home() {
     const checkSignIn = () => {
         if(localStorage.getItem('signIn') === 'true') {
 
-            let cats = {};
+            if(bookList.length > 0 || readingList.length > 0) {
+                let cats = {};
 
-            // console.log("User Book List", bookList);
+                // console.log("User Book List", bookList);
 
-            let bookCat = bookList.map(item => {
-                    return item["category"];
-            })
+                let bookCat = bookList.map(item => {
+                        return item["category"];
+                })
 
-            let readCat = readingList.map(item => {
-                    return item["category"];
-            })
+                let readCat = readingList.map(item => {
+                        return item["category"];
+                })
 
-            bookCat.map(item => {
-                console.log(item);
-                if(readCat.indexOf(item) === -1) {
-                    cats[item["category_name"]] = item;
+                bookCat.map(item => {
+                    console.log(item);
+                    if(readCat.indexOf(item) === -1) {
+                        cats[item["category_name"]] = item;
+                    }
+                })
+
+                readCat.map(item => {
+                    console.log(item);
+                    if(bookCat.indexOf(item) === -1) {
+                        cats[item["category_name"]] = item;
+                    }
+                })
+
+                let arr = Object.values(cats);
+
+                if(arr.length > 0) {
+                    setCategories(arr);
                 }
-            })
+            } else {
+                getAllCategories();
+            }
 
-            readCat.map(item => {
-                console.log(item);
-                if(bookCat.indexOf(item) === -1) {
-                    cats[item["category_name"]] = item;
-                }
-            })
+            
 
-            let arr = Object.values(cats);
+            
 
-            //console.log("arr", arr);
-
-            setCategories(arr);
+            
             // console.log("CATS", categories);
         } else {
             getAllCategories();
@@ -243,8 +253,6 @@ export default function Home() {
                     </div>
 
                 : null}
-
-                
 
                 <HomeExplore categories = {categories}/>
             </div>
