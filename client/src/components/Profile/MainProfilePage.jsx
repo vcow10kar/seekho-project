@@ -1,7 +1,7 @@
 import styles from "./mainProfilePage.module.css";
 import Switch from '@mui/material/Switch';
 import { useState } from "react";
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function MainProfilePage() {
     const label = { inputProps: { 'aria-label': 'Switch demo' } };
@@ -12,10 +12,14 @@ function MainProfilePage() {
         setMode(!mode);
         console.log(mode);
     }
+
+    const handleClick = () => {
+        window.location.pathname = "/home";
+    }
     return (
         <div className = {mode ? styles.darkProfilePage : styles.lightProfilePage}>
             <div className = {styles.header}>
-                <img src = "/assets/leftArrow.png" alt = "arrow"/>
+                <span onClick = {handleClick}><ArrowBackIcon/></span>
                 <p>Edit Profile</p>
             </div>
 

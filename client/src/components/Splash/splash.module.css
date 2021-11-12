@@ -4,7 +4,7 @@
   }
 
   .splashPage {
-    height: 860px;
+    height: 940px;
     background-color: white;
   }
   
@@ -38,14 +38,34 @@
     margin: 0px 28px;
   }
   
-  #skipbtn,
-  #nextbtn {
+  .skipbtn,
+  .nextbtn {
     color: #302d29;
-    background-color: transparent;
-    border: transparent;
+    background-color: white;
+    border: 0px;
+    font-size: 14px;
+    opacity: 0.5;
+    font-weight: 700;
   }
   
   .splash{
     padding-top:130px;
     /* margin: 0px 28px; */
+  }
+
+  .splashText {
+    font-size: 30px;
+    line-height: 35.16px;
+    font-weight: 700;
+    margin-top: 116px;
+    color: #302D29;
+    opacity: 0.8;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+
+  .sourceImg {
+    width: 397px;
+    height: 301.13px;
+    margin: auto;
   }

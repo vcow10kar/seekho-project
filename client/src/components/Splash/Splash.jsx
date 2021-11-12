@@ -61,17 +61,17 @@ export default function Splash() {
         >
           {items.map((item, i) => (
             <div key={i}>
-              <div height="1000px" margin="auto">
-                <img src={item.source} alt="splash" width="90%" />
+              <div>
+                <img className = {styles.sourceImg} src={item.source} alt="splash" width="90%" />
               </div>
-              <h2>{item.desc}</h2>
+              <h2 className = {styles.splashText}>{item.desc}</h2>
             </div>
           ))}
         </Carousel>
       </div>
       <div className={styles.skipnext}>
         <button
-          id={styles.skipbtn}
+          className={styles.skipbtn}
           onClick={handleNext}
         >
           SKIP
@@ -89,7 +89,7 @@ export default function Splash() {
         </div>
 
         <button
-          id={styles.nextbtn}
+          className={styles.nextbtn}
           onClick={activeItemIndex <= items.length - 1 ? () => next() : null}
         >
           NEXT
