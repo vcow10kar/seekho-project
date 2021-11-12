@@ -28,7 +28,7 @@ function Footer() {
   }
 
   const goToProfile = () => {
-    // window.location.pathname = '/explore';
+    window.location.pathname = '/user';
   }
 
   return (

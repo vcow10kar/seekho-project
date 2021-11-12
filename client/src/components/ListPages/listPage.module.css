@@ -1,13 +1,28 @@
 .listPage {
     width: 411px;
-    height: 911px;
+    min-height: 930px;
+    padding-top: 100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page {
+    margin-bottom: 30px;
 }
 
 
 .page > h2 {
     margin: 0px;
     padding: 0px;
+    font-size: 18px;
+    font-weight: 700;
     padding-left: 15px;
+    opacity: 0.8;
+}
+
+.page > p {
+    padding-left: 15px;
+    margin-bottom: 10px;
+    opacity: 0.8;
 }
 
 .list {

@@ -12,6 +12,8 @@ import EmbedPDF from "./components/DisplayPDF/EmbedPDF";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SeekhoLogo from "./components/InitialPages/SeekhoLogo";
 import ListPages from "./components/ListPages/ListPages";
+import { SearchCard } from "./components/Home/SearchCard";
+import MainProfilePage from "./components/Profile/MainProfilePage";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="/display" component={SinglePage} />
           <Route path="/explore" component={Explore} />
           <Route path = "/listPages" component = {ListPages}/>
+          <Route path = "/search" component = {SearchCard}/>
+          <Route path = "/user" component = {MainProfilePage}/>
         </Switch>
       </Router>
     </div>

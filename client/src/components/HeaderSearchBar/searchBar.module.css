@@ -1,0 +1,75 @@
+.searchParent {
+    height: 83px;
+    width: 411px;
+    top:0px;
+    position: fixed;
+    z-index: 3;
+    background-color: white;
+}
+
+.parent{ 
+    height: 83px;
+    width: 411px;
+    background-color: #F6FCFE;
+    padding: 0px 10px;
+    display: flex;
+    margin: auto;
+    gap: 20px;
+    position: absolute;
+}
+
+.leftArrow {
+    position: relative;
+    height: 17px;
+    width: 19px;
+    left: 11px;
+    top: -4px;
+    margin-top: 0px;
+    border-radius: 0px;
+    margin: auto;
+}
+
+.input{
+    display: flex;
+    height: 46px;
+    width: 246px;
+    left: 76px;
+    top: 19px;
+    border-radius: 10px;
+    background-color: #c4c4c4;
+    opacity: 0.4;
+    margin: auto;
+    border: 0px;
+}
+
+.input:active {
+    border:none;
+}
+
+.search{
+    height: 19px;
+    width: 19px;
+    position: relative;
+    left: -4px;
+    top: -3px;
+    border-radius: 0px;
+    margin: auto;
+}
+
+.circle{
+    height: 36px;
+    width: 36px;
+    left: 347px;
+    top: 24px;
+    border-radius: 0px;
+    margin: auto;
+}
+
+.inputDiv{
+    margin: auto;
+}
+
+.inputBox{
+    background-color: #c4c4c4;
+    border: none;
+}

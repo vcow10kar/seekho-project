@@ -31,15 +31,21 @@ function UserBookListPage() {
     return (
         <div className = {styles.page}>
             <h2>Book List</h2>
-            <div className = {styles.list}>
-                {bookList.map(item => {
-                    return (
-                        
-                        <IndividualBook data = {item} key = {item.id}/>  
+
+            {bookList.length > 0 ?
+                <div className = {styles.list}>
+                    {bookList.map(item => {
+                        return (
                             
-                    )
-                })}
-            </div>
+                            <IndividualBook data = {item} key = {item.id}/>  
+                                
+                        )
+                    })}
+                </div>
+           
+            : 
+            <p>Books added to Book List will be displayed here...</p>
+        }
         </div>         
     )
 }

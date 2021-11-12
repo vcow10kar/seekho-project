@@ -136,7 +136,7 @@ function MyBooks() {
                     }
 
                     <div className = {styles.booksNavigationLinks}>
-                        <a href = "/myBooks" className = {styles.allBooks}>
+                        <a href = "/listPages" className = {styles.allBooks}>
                             <p>All books</p>
                             <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
                         </a>

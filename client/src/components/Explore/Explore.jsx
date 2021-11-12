@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import axios from 'axios';
 import NavBar from "../Navbar/Navbar";
 import { Footer } from '../Footer/Footer';
+import { SearchBar } from '../HeaderSearchBar/SearchBar';
 
 export default function Explore() {
     const [categories, setCategories] = useState([]);
@@ -46,8 +47,10 @@ export default function Explore() {
     }, []);
     return (
         <div>
+            <SearchBar />
             <div className = {styles.explorePage}>
-            <NavBar disp = {"/profile"}/>
+            {/* <NavBar disp = {"/profile"}/> */}
+            
             <ExploreCarousel/>
             <div className = {styles.mainContent}>
                 <ExploreBooks categories = {categories}/>

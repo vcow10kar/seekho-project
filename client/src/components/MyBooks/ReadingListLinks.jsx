@@ -48,8 +48,6 @@ function ReadingListLinks({ userBookList, readingList, link }) {
                 {list}
             </p>
             <img className = {styles.arrow} src = "/assets/Vector13.png " alt = "Vector 13"/>
-            
-            
         </a>
     )
 }

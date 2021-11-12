@@ -18,8 +18,8 @@ export default function Profile({disp}) {
     window.location.pathname = "/";
   }
 
-  const next = () => {
-    window.location.pathname = "/signIn"
+  const next = (text) => {
+    window.location.pathname = text;
   }
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function Profile({disp}) {
         <NavBar disp = {"/explore"}/>
         <div styles = {{top: '83px'}} className = {styles.profilePage}>
             <div className = {styles.mainContent}>
-              <div className = {styles.section1} onClick = {email ? "/profile" : () => {next()}}>
+              <div className = {styles.section1} onClick = {email ? () => {next("/user")} : () => {next("/signIn")}}>
                 <h3 className={styles.you}>YOU</h3>
                 <div className = {styles.innersection1}>
                   <div className = {styles.circlular_profile}></div>

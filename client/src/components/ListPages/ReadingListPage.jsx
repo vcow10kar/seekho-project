@@ -31,19 +31,24 @@ function ReadingListPage() {
     return (
         <div className = {styles.page}>
             <h2>Reading List</h2>
-            <div
-            className = {styles.list}
-            >
-                {readingList.map(item => {
-                            return (
-                                <div>
-                                    <IndividualBook data = {item} key = {item.id}/>  
 
-                                    <div className = {[styles.buttonDiv,styles.block]}></div>
-                                </div>  
-                            )
-                        })}
-            </div>
+            {readingList.length > 0 ?
+                <div className = {styles.list}>
+                    {readingList.map(item => {
+                                return (
+                                    <div>
+                                        <IndividualBook data = {item} key = {item.id}/>  
+
+                                        <div className = {[styles.buttonDiv,styles.block]}></div>
+                                    </div>  
+                                )
+                            })}
+                </div>
+
+                :
+
+                <p>Books added to Read List will be displayed here...</p>
+            }
         </div>         
     )
 }
