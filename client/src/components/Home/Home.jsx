@@ -14,8 +14,9 @@ import { Footer } from '../Footer/Footer';
 export default function Home() {
     const [bookList, setBookList] = useState([]);
     const [readingList, setReadingList] = useState([]);
-    const [bookListId, setBookListId] = useState(localStorage.getItem('userBookList'));
-    const [readListId, setReadListId] = useState(localStorage.getItem('readingList'));
+    // const [bookListId, setBookListId] = useState(localStorage.getItem('userBookList'));
+    // const [readListId, setReadListId] = useState(localStorage.getItem('readingList'));
+    
     // cont [books, set]
     const carouselRef = useRef();
 
@@ -28,6 +29,9 @@ export default function Home() {
     }
 
     const getBooklist = () => {
+        console.log("Getting Book List...")
+        let bookListId = localStorage.getItem('userBookList');
+
         axios({
             method: "get",
             url: `http://localhost:5000/userBookList/${bookListId}`,
@@ -43,6 +47,8 @@ export default function Home() {
     }
 
     const getReadlist = () => {
+        console.log("Getting Reading List...")
+        let readListId = localStorage.getItem('readingList');
         axios({
             method: "get",
             url: `http://localhost:5000/readingList/${readListId}`,
@@ -57,11 +63,54 @@ export default function Home() {
         
     }
 
+    const fetchUser = () => {
+        axios
+        .get("http://localhost:5000/getuser", {withCredentials: true})
+        .then(res => {
+
+            console.log(res.data);
+
+            let temp = {
+                token: res.data.token,
+                userBookList: res.data.userBookList,
+                readingList: res.data.readingList
+            }
+
+            // if(res.data.token === undefined && res.data.userBookList === undefined && res.data.readingList === undefined ) {
+            //     goToGoogle();
+            // }
+
+            
+
+            //timer = null;
+            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('userBookList', res.data.userBookList);
+            localStorage.setItem('readingList', res.data.readingList);
+            localStorage.setItem('userId', res.data.userid);
+            
+            getBooklist();
+            getReadlist();
+        })
+        .catch(err => {
+            console.log("Not properly authenticated!");
+            console.log("Error", err);
+        })
+
+    }
 
     useEffect(() => {
-        getBooklist();
-        getReadlist();
-    }, [bookListId, readListId]);
+        
+        if(localStorage.getItem('googleLogin') === 'true') {
+            console.log("Before fetching...")
+            fetchUser();
+            localStorage.removeItem('googleLogin');
+        }
+    }, []);
+
+    // useEffect(() => {
+    //     getBooklist();
+    //     getReadlist();
+    // }, [bookListId, readListId]);
 
     return (
         <div className = {styles.homePage}>

@@ -12,7 +12,9 @@ export default function GoogleSignIn() {
     // const [user, setUser] = useState(init);
 
     function goToGoogle() {
-        let timer = null;
+        //let timer = null;
+
+        localStorage.setItem('googleLogin', true);
 
         const googleLoginURL = 'http://localhost:5000/auth/google';
         const newWindow = window.open(
@@ -21,43 +23,48 @@ export default function GoogleSignIn() {
             'width = 411'
         );
 
-        const fetchUser = () => {
-            axios
-            .get("http://localhost:5000/getuser", {withCredentials: true})
-            .then(res => {
-                let temp = {
-                    token: res.data.token,
-                    userBookList: res.data.userBookList,
-                    readingList: res.data.readingList
-                }
+        // const fetchUser = () => {
+        //     axios
+        //     .get("http://localhost:5000/getuser", {withCredentials: true})
+        //     .then(res => {
 
-                if(res.data.token === undefined && res.data.userBookList === undefined && res.data.readingList === undefined ) {
-                    goToGoogle();
-                }
+        //         console.log(res.data);
 
-                //timer = null;
-                localStorage.setItem('token', res.data.token);
-                localStorage.setItem('userBookList', res.data.userBookList);
-                localStorage.setItem('readingList', res.data.readingList);
-                localStorage.setItem('userId', res.data.userid);
-                window.location.pathname = '/home';
-            })
-            .catch(err => {
-                console.log("Not properly authenticated!");
-                console.log("Error", err);
-            })
+        //         let temp = {
+        //             token: res.data.token,
+        //             userBookList: res.data.userBookList,
+        //             readingList: res.data.readingList
+        //         }
 
-        }
+        //         // if(res.data.token === undefined && res.data.userBookList === undefined && res.data.readingList === undefined ) {
+        //         //     goToGoogle();
+        //         // }
 
-        if(newWindow) {
-            timer = setInterval(() => {
-                fetchUser();
-                console.log('Authenticated!');
-                if(timer) {
-                    clearInterval(timer);
-                }
-            }, 500);
-        }
+                
+
+        //         //timer = null;
+        //         localStorage.setItem('token', res.data.token);
+        //         localStorage.setItem('userBookList', res.data.userBookList);
+        //         localStorage.setItem('readingList', res.data.readingList);
+        //         localStorage.setItem('userId', res.data.userid);
+        //         //window.location.pathname = '/home';
+        //     })
+        //     .catch(err => {
+        //         console.log("Not properly authenticated!");
+        //         console.log("Error", err);
+        //     })
+
+        // }
+
+        // if(newWindow) {
+        //     timer = setInterval(() => {
+        //         fetchUser();
+        //         console.log('Authenticated!');
+        //         if(timer) {
+        //             clearInterval(timer);
+        //         }
+        //     }, 500);
+        // }
         
         
     }

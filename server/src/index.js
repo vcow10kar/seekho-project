@@ -30,13 +30,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.serializeUser(function (user, done) {
+  console.log("Serialize", user);
   //console.log("Serialize User:", token, userBookList, readingList);
-  return done(null, user);
+  done(null, user);
 });
 
 passport.deserializeUser(function (user, done) {
+  console.log("De-Serialize", user);
   //console.log(token, userBookList, readingList);
-  return done(null, user);
+  done(null, user);
 });
 
 const userController = require("./controllers/user.controller");
@@ -124,6 +126,21 @@ app.use("/academicBook", academiceController);
 app.use("/userBookList", userBookListController);
 app.use("/readingList", readingListController);
 
+
+/*---------FAcebook start ------*/
+// app.get("/auth/facebook", passport.authenticate("facebook", { scope: "name" }));
+
+// app.get(
+//   "/auth/facebook/callback",
+//   passport.authenticate("facebook", { failureRedirect: "http://localhost:3000/signIn" }),
+//   function (req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect("http://localhost:3000/home");
+//   }
+// );
+/*------facebook end-------- */
+
+/*-----------GOOGLE ---------*/
 app.get("/auth/google/failure", (req, res) => {
   return res.send("Something went wrong!");
 });
@@ -134,18 +151,7 @@ app.get(
     scope: ["email", "profile"],
   })
 );
-/*---------FAcebook start ------*/
-app.get("/auth/facebook", passport.authenticate("facebook", { scope: "name" }));
 
-app.get(
-  "/auth/facebook/callback",
-  passport.authenticate("facebook", { failureRedirect: "http://localhost:3000/signIn" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("http://localhost:3000/home");
-  }
-);
-/*------facebook end-------- */
 
 app.get(
   "/auth/google/callback",
@@ -156,12 +162,15 @@ app.get(
   function (req, res) {
     //const {token, userBookList, readingList} = req.user;
     //return res.status(200).json({token, userBookList, readingList});
-    res.redirect("http://localhost:3000/signIn");
+    res.redirect("http://localhost:3000/home");
   }
 );
 
 app.get("/getuser", (req, res) => {
+  console.log("User", req.user);
   res.send(req.user);
 });
+
+
 
 module.exports = app;

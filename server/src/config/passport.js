@@ -50,15 +50,15 @@ passport.use(
 
         const token = newToken(user);
 
-        user = {
+        let new_user = {
           userid: user._id,
           token: token,
           userBookList: userBookList._id,
           readingList: readingList._id,
         };
 
-        console.log(user);
-        return done(null, user);
+        console.log(new_user);
+        return done(null, new_user);
       } catch (err) {
         console.log("error:", err);
       }
