@@ -29,10 +29,15 @@ export default function SignIn() {
             if(res.data.errors) {
                 let error = JSON.parse(res.data.errors);    
                 error.map(item => {
-                    if(item['param'] === 'email') {
-                        setEmailError(item['msg'])
+                    if(item['param'] === 'email' && item['param'] === 'password') {
+                        setEmailError(item['msg']);
+                        setPasswordError(item['msg']);
                     } else if(item['param'] === 'password') {
                         setPasswordError(item['msg'])
+                        setEmailError(null);
+                    } else if(item['param'] === 'email') {
+                        setEmailError(item['msg']);
+                        setPasswordError(null)
                     }
                 })
 

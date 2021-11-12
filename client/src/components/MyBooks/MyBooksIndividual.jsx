@@ -7,7 +7,7 @@ function MyBooksIndividual({data}) {
         <div className = {styles.book}>
             
                 <img className = {styles.bookImg} src = {data.coverImageUrl} alt = {data.title}/>
-                <Link to = {`/books/${data._id}`}>
+                <Link to = {`/displayBook/${data._id}`}>
                     <p className = {styles.bookTilte}>{data.title}</p>
                     <p className = {styles.bookAuthor}>by {data.author}</p>
                 </Link>

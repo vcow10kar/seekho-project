@@ -65,6 +65,7 @@ const AlertWrapper = styled(Alert) ({
     fontSize: '12px', 
     width: '280px', 
     borderRadius: '12px',
+    marginBottom: '12px',
 
     '& > div:nth-child(1)': {
         width: '20%',
