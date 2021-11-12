@@ -3,6 +3,7 @@ import { Box, Link } from "@mui/material";
 import styles from './signin.module.css';
 import axios from "axios";
 import GoogleSignIn from "./GoogleSignIn";
+import FacebookSignIn from "./FacebookSignIn"
 import {SignInButton as SignUpButton, FormText, LinkWrapper, AlertWrapper, PasswordMsg, FormTextPassword} from './SignInWrappers'
 
 export default function SignUp() {
@@ -110,6 +111,7 @@ export default function SignUp() {
                 
 
                 <GoogleSignIn/>
+                <FacebookSignIn/>
 
 
                 <a href = "/home">Skip</a>

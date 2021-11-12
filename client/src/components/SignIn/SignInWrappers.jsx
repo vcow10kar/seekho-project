@@ -99,6 +99,24 @@ const GoogleButton = styled(Button)({
     }
 })
 
+
+const FacebookButton = styled(Button)({
+  backgroundColor: "#dcddde",
+  width: "280px",
+  height: "54px",
+  fontWeight: 500,
+  fontsize: "14px",
+  lineHeight: "20px",
+  "&:hover": {
+    backgroundColor: "#c4c4c4",
+  },
+
+  "&.MuiButton-root": {
+    borderRadius: " 12px",
+  },
+});
+
+
 const PasswordMsg = styled.p`
     font-size: 12px;
     color: black;
@@ -108,4 +126,4 @@ const PasswordMsg = styled.p`
     text-align: center;
 `
 
-export {SignInButton, FormText, LinkWrapper, AlertWrapper, GoogleButton, PasswordMsg, FormTextPassword}
+export {SignInButton, FormText, LinkWrapper, AlertWrapper, GoogleButton,FacebookButton, PasswordMsg, FormTextPassword}
