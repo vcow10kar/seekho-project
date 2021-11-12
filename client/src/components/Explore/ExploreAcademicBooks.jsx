@@ -10,7 +10,7 @@ const ExploreAcademicBooks = ({subjects}) => {
         <div>
             {subjects.map(item => {
                return (
-                <div key = {item.id}>
+                <div key = {item.id} style = {{marginBottom: '18px'}}>
                     <div className = {styles.exploreCategoriesDiv}>
                         <p className = {styles.bookCategory}>Academic Books for {item.subject_name}</p>
                         <SwapHorizIcon/>

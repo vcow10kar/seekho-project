@@ -7,7 +7,7 @@ import MyBooks from "./components/MyBooks/MyBooks";
 import Explore from "./components/Explore/Explore";
 import Books from "./components/Books/Books";
 import SinglePage from "./components/DisplayPDF/SinglePage";
-import Profile from "./components/profile/profile";
+import Profile from "./components/Profile/Profile.jsx";
 import EmbedPDF from "./components/DisplayPDF/EmbedPDF";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SeekhoLogo from "./components/InitialPages/SeekhoLogo";

@@ -5,7 +5,7 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { Link } from "react-router-dom";
 
-import "./navbar.css";
+import styles from "./navbar.module.css";
 
 function Navbar({disp}) {
   if(!disp) {
@@ -35,16 +35,16 @@ function Navbar({disp}) {
   return (
     <div>
       {/* <h1>Navbar</h1> */}
-      <Box className="navbar">
-        <Box className="navbar_inner">
+      <Box className={styles.navbar}>
+        <Box className= {styles.navbar_inner}>
           <img
-            className="navbar_applogo"
+            className= {styles.navbar_applogo}
             src="/assets/SeekhoMainLogo.png"
             alt="seekho"
             onClick = {handleClick}
           />
           <ToggleButtonGroup
-            className="navbar_menutogglebtn"
+            className= {styles.navbar_menutogglebtn}
             size="small"
             {...control}
           >

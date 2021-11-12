@@ -26,9 +26,6 @@
     width: 209px;
     margin: 0px 15px;
 }
-.resumeReadingCarousel > * {
-    border: 1px solid black;
-}
 
 .resumeReadingCarousel > .rec.rec-slider-container {
     overflow: visible;

@@ -4,7 +4,7 @@
 
 .academics {
     width: 100%;
-    margin:0px 0px 0px 0px;
+    margin:0px 0px 18px 0px;
     font-family: "Roboto", sans-serif;
 }
 
@@ -15,7 +15,8 @@
     font-weight: 900;
     opacity: 0.8;
     text-align: left;
-    margin-left: 16px;
+    margin-left: 0px;
+    margin-bottom: 8px;
 }
 
 .academicFieldItem {
@@ -35,6 +36,7 @@
     opacity: 0.8;
     text-align: center;
     margin-bottom: 0px;
+    margin-top: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;

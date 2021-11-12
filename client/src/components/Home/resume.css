@@ -1,12 +1,12 @@
 .resume-parent{
     display: flex;
     gap: 10px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 
 .resume{
-    width: 300px;
+    width: 209px;
     height: 92px;
     left: 40px;
     top: 393px;

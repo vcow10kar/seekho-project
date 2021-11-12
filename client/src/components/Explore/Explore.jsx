@@ -52,10 +52,10 @@ export default function Explore() {
             <div className = {styles.mainContent}>
                 <ExploreBooks categories = {categories}/>
                 
-                <div style = {{marginTop: '20px'}}>
-                    <hr style = {{ margin: "0px 10px" }}/>
+                <div style = {{marginTop: '20px', marginBottom: '20px'}}>
+                    <hr style = {{ margin: "0px 10px", height: '4px' }}/>
                     <p className = {styles.AcademicHeader}>Academic Books Section</p>
-                    <hr style = {{margin: "0px 10px"}}/>
+                    <hr style = {{margin: "0px 10px", height: '4px' }}/>
                 </div>
                 
                 <ExploreAcademicBooks subjects = {subjects}/>
