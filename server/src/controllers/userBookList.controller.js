@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const UserBookList = require("../models/userBookList.model");
+const ReadingList = require("../models/readingList.model");
 
 // Creating a userBook_list
 

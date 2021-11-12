@@ -10,7 +10,7 @@ export default function Books() {
     const {id}  = useParams();
 
     const closeWindow = () => {
-        window.location.pathname = "/explore";
+        window.location.pathname = "/home";
     }
 
     const getBook = () => {
@@ -51,6 +51,7 @@ export default function Books() {
 
     const addToBookList = () => {
         let bookListId = localStorage.getItem('userBookList');
+        let readList = localStorage.getItem("readingList");
 
         if(!bookListId) {
             window.location.pathname = '/signIn';
@@ -67,7 +68,21 @@ export default function Books() {
             })
             .catch(err => {
                 console.log("Error:", err);
-            }) 
+            })
+
+            axios({
+                method: "patch",
+                url: `http://localhost:5000/readingList/books/${readList}`,
+                data: {
+                    book: book._id
+                }
+            })
+            .then(res => {
+                console.log("Removed book from reading list!");
+            })
+            .catch(err => {
+                console.log("Error:", err);
+            })
         }
 
         window.location.pathname = `/displayBook/${id}`;

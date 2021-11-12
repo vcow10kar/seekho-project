@@ -66,8 +66,23 @@ router.patch("/:id/books", async (req, res) => {
 
 // Deleting a reading_list by id
 
-router.delete("/:id", async (req, res) => {
-  let readingList = await ReadingList.findByIdAndDelete(req.params.id);
-  res.status(200).send({ readingList });
+router.patch("/books/:id", async (req, res) => {
+
+  console.log("Removing a book from the reading list!");
+  let readingList;
+  readingList = await ReadingList.findById(req.params.id);
+  readingList = await ReadingList.count({_id: req.params.id, book: {$in: [req.body.book]}});
+
+  if(readingList > 0) {
+    readingList = await ReadingList.findByIdAndUpdate(
+      req.params.id,
+      {$pull: {book: req.body.book}}
+    ).exec();
+
+  res.status(200).send(req.body );
+  } else {
+    console.log("Book not present");
+    res.status(400).send({message: "Book not in Reading List"});
+  }
 });
 module.exports = router;
