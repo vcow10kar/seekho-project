@@ -1,11 +1,14 @@
 .homePage {
     height: 950px;
+    background-color: white;
 }
 
 .mainContent {
     padding-top: 100px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 100px;
+    background-color: white;
 }
 
 .carouselParent {

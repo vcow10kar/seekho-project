@@ -10,14 +10,41 @@ import Carousel from "react-elastic-carousel";
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import NavBar from "../Navbar/Navbar";
 import { Footer } from '../Footer/Footer';
+import ExploreBooks from "../Explore/ExploreBooks";
 
 export default function Home() {
     const [bookList, setBookList] = useState([]);
     const [readingList, setReadingList] = useState([]);
-    // const [bookListId, setBookListId] = useState(localStorage.getItem('userBookList'));
-    // const [readListId, setReadListId] = useState(localStorage.getItem('readingList'));
-    
-    // cont [books, set]
+    const [categories, setCategories] = useState([]);
+    const [subjects, setSubjects] = useState([]);
+
+    const getAllCategories = () => {
+        axios({
+            method: "get",
+            url: "http://localhost:5000/category"
+        })
+        .then(res => {
+            //console.log(res.data.category);
+            setCategories([...res.data.category]);
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        })
+    }
+
+    const getAllSubjects = () => {
+        axios({
+            method: "get",
+            url: "http://localhost:5000/subject"
+        })
+        .then(res => {
+            //console.log(res.data.subjects);
+            setSubjects([...res.data.subjects]);
+        })
+        .catch(err => {
+            console.log("Error:", err);
+        })
+    }
     const carouselRef = useRef();
 
     const handle = (data) => {
@@ -39,6 +66,7 @@ export default function Home() {
         .then(res => {
             let data = res.data.userBookList.book;
             setBookList(data);
+            console.log(bookList);
         })
         .catch(err => {
             console.log("Error:", err);
@@ -56,6 +84,7 @@ export default function Home() {
         .then(res => {
             let data = res.data.readingList.book;
             setReadingList(data);
+            console.log(readingList);
         })
         .catch(err => {
             console.log("Error:", err);
@@ -104,7 +133,13 @@ export default function Home() {
             console.log("Before fetching...")
             fetchUser();
             localStorage.removeItem('googleLogin');
+        } else {
+            getBooklist();
+            getReadlist();
         }
+
+        getAllCategories();
+        getAllSubjects();
     }, []);
 
     // useEffect(() => {
@@ -117,7 +152,6 @@ export default function Home() {
             <NavBar disp = {"/profile"}/>
 
             <div className = {styles.mainContent}>
-                <RecomCard/>
 
                 {bookList.length > 0 ? 
                     <div>
@@ -146,6 +180,40 @@ export default function Home() {
                     </div>
 
                 : null}
+
+                {readingList.length > 0 ? 
+                    <div>
+                        <div className = {styles.exploreCategoriesDiv}>
+                            <p className = {styles.resumeReadingTitle}>Start Reading</p>
+                            <SwapHorizIcon/>
+                        </div>
+
+                        <div className = {styles.carouselParent}>
+                            <Carousel
+                                ref={carouselRef}
+                                itemsToShow={1}
+                                showArrows={false}
+                                pagination={false}
+                                initialActiveIndex={1}
+                                className = {styles.resumeReadingCarousel}
+                                // onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
+                            >
+                                {readingList.map(item => {
+                                    return (
+                                        <Resume className = {styles.div} key = {item._id} resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/>     
+                                    )
+                                })}
+                            </Carousel>
+                        </div>
+                    </div>
+
+                : null}
+
+            <ExploreBooks categories = {categories}/>
+
+                
+
+                
 
             </div>
             <Footer/>
