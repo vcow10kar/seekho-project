@@ -14,7 +14,7 @@ function Footer() {
   const location = useLocation();
 
   let path = location.pathname;
-  console.log(path);
+
   const goToHome = () => {
     window.location.pathname = '/home';
   }

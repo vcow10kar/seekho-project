@@ -30,13 +30,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.serializeUser(function (user, done) {
-  console.log("Serialize", user);
+  //console.log("Serialize", user);
   //console.log("Serialize User:", token, userBookList, readingList);
   done(null, user);
 });
 
 passport.deserializeUser(function (user, done) {
-  console.log("De-Serialize", user);
+  //console.log("De-Serialize", user);
   //console.log(token, userBookList, readingList);
   done(null, user);
 });
@@ -167,7 +167,7 @@ app.get(
 );
 
 app.get("/getuser", (req, res) => {
-  console.log("User", req.user);
+  //console.log("User", req.user);
   res.send(req.user);
 });
 

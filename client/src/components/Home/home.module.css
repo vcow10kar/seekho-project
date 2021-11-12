@@ -10,6 +10,9 @@
     padding-bottom: 100px;
     background-color: white;
 }
+.userBookList, .userReadList {
+    margin-bottom: 18px;
+}
 
 .carouselParent {
     overflow: hidden;

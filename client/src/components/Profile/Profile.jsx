@@ -14,6 +14,7 @@ export default function Profile({disp}) {
     localStorage.setItem('userBookList', "");
     localStorage.setItem('readingList', "");
     localStorage.setItem('userId', "");
+    localStorage.setItem('signIn', 'false');
     window.location.pathname = "/";
   }
 

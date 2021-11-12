@@ -57,7 +57,7 @@ passport.use(
           readingList: readingList._id,
         };
 
-        console.log(new_user);
+        //console.log(new_user);
         return done(null, new_user);
       } catch (err) {
         console.log("error:", err);

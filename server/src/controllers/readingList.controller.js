@@ -21,20 +21,20 @@ router.get("/", async (req, res) => {
 // Getting a reading_list by id
 
 router.get("/:id", async (req, res) => {
-  let readingList = await ReadingList.findById(req.params.id)
-  .populate('user')
-  .populate({path: 'book'})
+  let readingList = await ReadingList.findById(req.params.id).populate('user')
+  .populate({path: 'book', populate: {path: "category"}})
   .populate({path: 'academic'})
   .lean().exec();
+  //console.log("Reading List", readingList);
   res.status(200).send({ readingList });
 });
 
 //Check if book is present in read list 
 router.get("/checkReadList/:id/:bookId", async (req, res) => {
-  console.log(req.params);
+  //console.log(req.params);
   let readingList = await ReadingList.count({_id: req.params.id, book: {$in: [req.params.bookId]}});
 
-  console.log(readingList);
+  //console.log(readingList);
 
   if(readingList === 0) {
     res.status(200).send({ message: false });

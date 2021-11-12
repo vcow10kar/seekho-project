@@ -11,12 +11,17 @@ import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import NavBar from "../Navbar/Navbar";
 import { Footer } from '../Footer/Footer';
 import ExploreBooks from "../Explore/ExploreBooks";
+import ExploreItem from '../Explore/ExploreItem';
+import HomeExplore from './HomeExplore';
 
 export default function Home() {
+    const carouselRef = useRef();
     const [bookList, setBookList] = useState([]);
     const [readingList, setReadingList] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [allCategories, setAllCategories] = useState([]);
     const [subjects, setSubjects] = useState([]);
+    // const [recommended, setR]
 
     const getAllCategories = () => {
         axios({
@@ -24,7 +29,7 @@ export default function Home() {
             url: "http://localhost:5000/category"
         })
         .then(res => {
-            //console.log(res.data.category);
+            console.log("User not logged in");
             setCategories([...res.data.category]);
         })
         .catch(err => {
@@ -45,18 +50,14 @@ export default function Home() {
             console.log("Error:", err);
         })
     }
-    const carouselRef = useRef();
+    
 
-    const handle = (data) => {
-        setBookList(data);
-    }
+    // const getBooks = () => {
 
-    const getBooks = () => {
-
-    }
+    // }
 
     const getBooklist = () => {
-        console.log("Getting Book List...")
+        //console.log("Getting Book List...")
         let bookListId = localStorage.getItem('userBookList');
 
         axios({
@@ -66,7 +67,6 @@ export default function Home() {
         .then(res => {
             let data = res.data.userBookList.book;
             setBookList(data);
-            console.log(bookList);
         })
         .catch(err => {
             console.log("Error:", err);
@@ -75,7 +75,7 @@ export default function Home() {
     }
 
     const getReadlist = () => {
-        console.log("Getting Reading List...")
+        //console.log("Getting Reading List...")
         let readListId = localStorage.getItem('readingList');
         axios({
             method: "get",
@@ -83,8 +83,8 @@ export default function Home() {
         })
         .then(res => {
             let data = res.data.readingList.book;
+            console.log("Reading List:", data);
             setReadingList(data);
-            console.log(readingList);
         })
         .catch(err => {
             console.log("Error:", err);
@@ -97,8 +97,6 @@ export default function Home() {
         .get("http://localhost:5000/getuser", {withCredentials: true})
         .then(res => {
 
-            console.log(res.data);
-
             let temp = {
                 token: res.data.token,
                 userBookList: res.data.userBookList,
@@ -108,14 +106,12 @@ export default function Home() {
             // if(res.data.token === undefined && res.data.userBookList === undefined && res.data.readingList === undefined ) {
             //     goToGoogle();
             // }
-
-            
-
             //timer = null;
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('userBookList', res.data.userBookList);
             localStorage.setItem('readingList', res.data.readingList);
             localStorage.setItem('userId', res.data.userid);
+            localStorage.setItem('signIn', true);
             
             getBooklist();
             getReadlist();
@@ -127,25 +123,64 @@ export default function Home() {
 
     }
 
+    const checkSignIn = () => {
+        if(localStorage.getItem('signIn') === 'true') {
+
+            let cats = {};
+
+            // console.log("User Book List", bookList);
+
+            let bookCat = bookList.map(item => {
+                    return item["category"];
+            })
+
+            let readCat = readingList.map(item => {
+                    return item["category"];
+            })
+
+            bookCat.map(item => {
+                console.log(item);
+                if(readCat.indexOf(item) === -1) {
+                    cats[item["category_name"]] = item;
+                }
+            })
+
+            readCat.map(item => {
+                console.log(item);
+                if(bookCat.indexOf(item) === -1) {
+                    cats[item["category_name"]] = item;
+                }
+            })
+
+            let arr = Object.values(cats);
+
+            //console.log("arr", arr);
+
+            setCategories(arr);
+            // console.log("CATS", categories);
+        } else {
+            getAllCategories();
+        }
+    }
+
     useEffect(() => {
         
         if(localStorage.getItem('googleLogin') === 'true') {
-            console.log("Before fetching...")
+            //console.log("Before fetching...")
             fetchUser();
             localStorage.removeItem('googleLogin');
-        } else {
+        } else if (localStorage.getItem('signIn') === 'true'){
             getBooklist();
             getReadlist();
         }
-
-        getAllCategories();
-        getAllSubjects();
+        
     }, []);
 
-    // useEffect(() => {
-    //     getBooklist();
-    //     getReadlist();
-    // }, [bookListId, readListId]);
+    useEffect(() => {
+        checkSignIn();
+        // getAllCategories();
+        // getAllSubjects();
+    }, [bookList, readingList]);
 
     return (
         <div className = {styles.homePage}>
@@ -153,8 +188,36 @@ export default function Home() {
 
             <div className = {styles.mainContent}>
 
+                {readingList.length > 0 ? 
+                    <div className = {styles.userReadList}>
+                        <div className = {styles.exploreCategoriesDiv}>
+                            <p className = {styles.resumeReadingTitle}>Start Reading</p>
+                            <SwapHorizIcon/>
+                        </div>
+
+                        <div className = {styles.carouselParent}>
+                            <Carousel
+                                ref={carouselRef}
+                                itemsToShow={2}
+                                showArrows={false}
+                                pagination={false}
+                                initialActiveIndex={0}
+                                className = {styles.resumeReadingCarousel}
+                                // onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
+                            >
+                                {readingList.map(item => {
+                                    return (
+                                        <ExploreItem key = {item._id} data = {item}/>
+                                    )
+                                })}
+                            </Carousel>
+                        </div>
+                    </div>
+
+                : null}
+
                 {bookList.length > 0 ? 
-                    <div>
+                    <div className = {styles.userBookList}>
                         <div className = {styles.exploreCategoriesDiv}>
                             <p className = {styles.resumeReadingTitle}>Resume Reading</p>
                             <SwapHorizIcon/>
@@ -181,40 +244,9 @@ export default function Home() {
 
                 : null}
 
-                {readingList.length > 0 ? 
-                    <div>
-                        <div className = {styles.exploreCategoriesDiv}>
-                            <p className = {styles.resumeReadingTitle}>Start Reading</p>
-                            <SwapHorizIcon/>
-                        </div>
-
-                        <div className = {styles.carouselParent}>
-                            <Carousel
-                                ref={carouselRef}
-                                itemsToShow={1}
-                                showArrows={false}
-                                pagination={false}
-                                initialActiveIndex={1}
-                                className = {styles.resumeReadingCarousel}
-                                // onChange={(currentItem) => setActiveItemIndex(currentItem.index)}
-                            >
-                                {readingList.map(item => {
-                                    return (
-                                        <Resume className = {styles.div} key = {item._id} resumeId = {item._id} resumeColor = {'#fabdd1'} resumeLink = {item.coverImageUrl} resumeTag = {item.title} resumeAuthor = {item.author}/>     
-                                    )
-                                })}
-                            </Carousel>
-                        </div>
-                    </div>
-
-                : null}
-
-            <ExploreBooks categories = {categories}/>
-
                 
 
-                
-
+                <HomeExplore categories = {categories}/>
             </div>
             <Footer/>
         </div>

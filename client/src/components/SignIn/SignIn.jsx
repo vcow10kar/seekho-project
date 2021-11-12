@@ -43,6 +43,7 @@ export default function SignIn() {
                 localStorage.setItem('userBookList', res.data.userBookList);
                 localStorage.setItem('readingList', res.data.readingList);
                 localStorage.setItem('userId', res.data.userid);
+                localStorage.setItem('signIn', true);
                 window.location.pathname = '/home';
             }
         })

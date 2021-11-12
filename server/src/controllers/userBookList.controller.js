@@ -23,10 +23,11 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   let userBookList = await UserBookList.findById(req.params.id).populate('user')
-  .populate({path: 'book'})
+  .populate({path: 'book', populate: {path: "category"}})
   .populate({path: 'academic'})
   .lean().exec();
 
+  //console.log(userBookList);
   res.status(200).send({ userBookList });
 });
 
