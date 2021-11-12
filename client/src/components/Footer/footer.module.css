@@ -1,6 +1,7 @@
 .footerComponent {
   /* width: 100%; */
   margin: 0px 20px;
+  background-color: white;
 }
 
 .footerBottom {
@@ -9,14 +10,14 @@
   padding: 0px;
   background-color: white;
   position: fixed;
-  top: 800px;
+  top: 900px;
   margin-left: 0px;
 }
 
 .footer {
   width: 371px;
   height: 55px;
-  top: 800px;
+  top: 900px;
   margin: auto;
   background: #aedef1;
   border-radius: 30px;
