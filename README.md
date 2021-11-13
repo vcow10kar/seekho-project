@@ -40,65 +40,8 @@ Seekho is a free ebook library with books ranging from fiction, and non-fiction 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## **Prerequisites**
 
-The following software is required to be installed on your system:
-
-- [NodeJS](https://nodejs.org/en/)
-
-  The following version of Node and Npm are required:
-
-Node 8.x
-Npm 3.x
-
-Type the following commands in the terminal to verify your node and npm versions
-
-```
-node -v
-npm -v
-```
-
-- MongoDB
-
-  MongoDB 3.x is required
-
-Type the following command to verify that MongoDB is running on your local machine
-
-```
-mongo -version
-```
-
-### MongoDB Setup
-
-A running instance of MongoDB is required. Alternatively use a hosted MongoDB from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-
-#### **Install and Host MongoDB Locally**
-
-Installing MongoDB is relatively straight forward. There are currently 3 platform (Windows, Linux, OSX) releases available and can be found here
-
-For more specific installation instructions, please see the following links:
-
-- [Install MongoDB On Linux](https://docs.mongodb.com/v3.0/administration/install-on-linux/)
-
-- [Install MongoDB On Windows](https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-windows/)
-
-- [Install MongoDB On OSX](https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-os-x/)
-
-#### _Third Party Hosting_
-
----
-
-##### MongoDB Atlas
-
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is basically a database as a service and is hosted in the cloud. That means that you don't need to install or setup anything to start using MongoDB.
-
-You can get started for free by registering [here](https://www.mongodb.com/cloud/atlas). The free tier entitles you to 512MB storage.
-
-Please review the documentation [here](https://docs.atlas.mongodb.com/)
-
-<br/>
-
-### Install
+## Install
 
 Follow the following steps to get development environment running.
 
@@ -143,6 +86,7 @@ or
 
 npm i
 ```
+* Need to Add .env File with Relevent Environment Variable
 
 ### **_Run the project_**
 
@@ -165,6 +109,31 @@ npm i
   [Medium](https://medium.com/@yashgarg1402/d862f088083e)
 
 <br/>
+
+## **_Snapshots of the Project_**
+
+- after running the project first screen apper on the website
+  <img src="./snapshots/startpage.png" alt="Start page"/>
+
+  <br/>
+
+- Sign In and Sign Up Page With Google and Facebook Sign Option with Skip Optaion , if you not want to sign in only visit to website you can use Skip button below
+  <img src="./snapshots/signinandsignup.png" alt="Sign In/Sign Up page"/>
+
+  <br/>
+
+  - Home Page along with Navbar and Footer and also show user latest reading book
+
+    <img src="./snapshots/homepagewithnavbarandfooter.png">
+
+<br/>
+
+- user page which has all the information of the user
+  <img src="./snapshots/userpage.png">
+<br/>
+
+- User Profile Edit Option with Night Mode Option
+    <img src="./snapshots/profileedit.png">
 
 # Contributors
 
