@@ -40,7 +40,6 @@ Seekho is a free ebook library with books ranging from fiction, and non-fiction 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-
 ## Install
 
 Follow the following steps to get development environment running.
@@ -86,7 +85,8 @@ or
 
 npm i
 ```
-* Need to Add .env File with Relevent Environment Variable
+
+- Need to Add .env File with Relevent Environment Variable
 
 ### **_Run the project_**
 
@@ -122,18 +122,33 @@ npm i
 
   <br/>
 
-  - Home Page along with Navbar and Footer and also show user latest reading book
+  - Home Page along with Navbar and Footer and also show which user start reading
 
     <img src="./snapshots/homepagewithnavbarandfooter.png">
 
 <br/>
 
+- Explore page has all the according to book section such as [Contemporrary](https://www.google.com/search?sxsrf=AOaemvJ-QyJqd48vwgAsMipcTe2OwMzOWQ:1636798512792&q=contemporary+book+meaning&spell=1&sa=X&ved=2ahUKEwivrbHPjZX0AhXGbSsKHQ_KCpcQirwEKAB6BQgBENcB&biw=1536&bih=718&dpr=1.25) , [Self Help](https://en.wikipedia.org/wiki/Self-help_book) , [Thriller](<https://en.wikipedia.org/wiki/Thriller_(genre)>) etc...
+
+    <img src="./snapshots/explore.png"/>
+
+  <br/>
+
 - user page which has all the information of the user
   <img src="./snapshots/userpage.png">
-<br/>
+  <br/>
 
 - User Profile Edit Option with Night Mode Option
-    <img src="./snapshots/profileedit.png">
+  <img src="./snapshots/profileedit.png">
+
+  - Night Mode
+
+    <img src="./snapshots/nightmode.png" />
+
+  <br/>
+  - User Profile Detail
+
+    <img src="./snapshots/userdetail.png" />
 
 # Contributors
 
