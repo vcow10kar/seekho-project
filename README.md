@@ -7,7 +7,7 @@ Seekho is a free ebook library with books ranging from fiction, and non-fiction 
 - Read Books By Categories
 - Add Books to Read Later
 - Download books
-- Sign in / Sign up with Mail,Google and Facebook(asked not working)
+- Sign in / Sign up with Mail,Google and Facebook
 
 ## Tech Stacks
 
