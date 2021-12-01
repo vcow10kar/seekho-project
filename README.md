@@ -1,15 +1,14 @@
-# seekho-project
+# Seekho
 
 Seekho is a free ebook library with books ranging from fiction, and non-fiction to academic books for school and college students.
 
 ## Features
 
 - Read Books By Categories
-- Add Books to Read Later
-- Download books
-- Sign in / Sign up with Mail,Google and Facebook
+- Add Books to Book List (currently reading) or a Read List (to read later)
+- Sign in / Sign up with email and Google
 
-## Tech Stacks
+## Tech Stack
 
 #### **Frontend**
 
@@ -112,48 +111,53 @@ npm i
 
 ## **_Snapshots of the Project_**
 
-- after running the project first screen apper on the website
-  <img src="./snapshots/startpage.png" alt="Start page"/>
+- Splash Screen
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638359242891/edrhgWfrz.png" alt="Start page"/>
 
   <br/>
 
 - Sign In and Sign Up Page With Google and Facebook Sign Option with Skip Optaion , if you not want to sign in only visit to website you can use Skip button below
-  <img src="./snapshots/signinandsignup.png" alt="Sign In/Sign Up page"/>
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638359354339/8uc94c3IP.png" alt="Sign In/Sign Up page"/>
 
   <br/>
 
-  - Home Page along with Navbar and Footer and also show which user start reading
+- Home Page along with Navbar and Footer and also show which user start reading
 
-    <img src="./snapshots/homepagewithnavbarandfooter.png">
+    <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638359419972/UQRixeMaB.png">
 
 <br/>
 
-- Explore page has all the according to book section such as [Contemporrary](https://www.google.com/search?sxsrf=AOaemvJ-QyJqd48vwgAsMipcTe2OwMzOWQ:1636798512792&q=contemporary+book+meaning&spell=1&sa=X&ved=2ahUKEwivrbHPjZX0AhXGbSsKHQ_KCpcQirwEKAB6BQgBENcB&biw=1536&bih=718&dpr=1.25) , [Self Help](https://en.wikipedia.org/wiki/Self-help_book) , [Thriller](<https://en.wikipedia.org/wiki/Thriller_(genre)>) etc...
+- Explore page has all the according to book section such as Clasics, Thriller, Self-help etc...
 
-    <img src="./snapshots/explore.png"/>
+    <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638359480701/lFNnXi4Ry.png"/>
 
   <br/>
 
-- user page which has all the information of the user
-  <img src="./snapshots/userpage.png">
+- The My Books page has displays the books in the User's Read and Book List
+
+   <img src = "https://cdn.hashnode.com/res/hashnode/image/upload/v1638359835833/Vmwr5Fcf4.png" alt = "myBooksPage"/>
+   <br/>
+   
+- Settings Page
+
+  <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638359994967/udpa1OX6H.png">
   <br/>
 
-- User Profile Edit Option with Night Mode Option
-  <img src="./snapshots/profileedit.png">
+- User Profile Page
+   
+   - Light Mode
+
+        <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638360184554/mbZULfAYm.png">
+        <br/>
 
   - Night Mode
 
-    <img src="./snapshots/nightmode.png" />
-
-  <br/>
-  - User Profile Detail
-
-    <img src="./snapshots/userdetail.png" />
+    <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1638360100665/XyiQWCIJa.png" />
+    <br/>
 
 # Contributors
-
-- **Abhishek Ranjan** [AbhishekRanjan8051](https://github.com/AbhishekRanjan8051)
-- **Vaishnavi Kawthankar** [vcom10kar](https://github.com/vcow10kar)
+- **Vaishnavi Kawthankar** [vcow10kar](https://github.com/vcow10kar)
+- **Yash Garg** [yash-ga](https://github.com/yash-ga)
 - **Prashanth Dyavanapally** [Prashanth2856](https://github.com/Prashanth2856)
 - **Vishal Rathod** [Vishal-080](https://github.com/Vishal-080)
-- **Yash Garg** [yash-ga](https://github.com/yash-ga)
+- **Abhishek Ranjan** [AbhishekRanjan8051](https://github.com/AbhishekRanjan8051)
